@@ -1,0 +1,58 @@
+.header{
+    height: 100vh;
+    background: #3A3F4E;
+}
+/* 
+.header::after{
+    content: '';
+    display: block;
+    color: ;
+} */
+
+.header__nav{
+    display: flex;
+}
+
+.header__nav-icon{
+    background: #747CA5;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(40px);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+}
+
+.header__nav-currency{
+    width: 37px;
+    height: 37px;
+    background: #434864;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: var(--montBold);
+}
+
+.header__nav-country{
+    width: 37px;
+    height: 37px;
+    background: #434864;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: var(--montBold);
+}
+
+.header__nav-logIcon{
+
+}
