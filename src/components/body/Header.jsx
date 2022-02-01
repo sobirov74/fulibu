@@ -10,7 +10,7 @@ const Header = () => {
 
     <div className="header__nav">
       <a href="#" className="header__nav-searchIcon">
-        <img src={searchIcon} alt="" />
+        <img className='header__nav-icon' src={searchIcon} alt="" />
       </a>
 
       <a href="#" className="header__nav-currency">usd</a>
@@ -24,17 +24,18 @@ const Header = () => {
       <a href="#" className="header__nav-country">uz</a>
 
       <a href="#" className="header__nav-logIcon">
-        <img src={userIcon} alt="" />
+        <img className='header__nav-icon' src={userIcon} alt="" />
       </a>
 
 
     </div>
 
-    <div className="header__content-">
+    <div className="header__content">
       <div className="header__content-left">
-        <h1 className="header__content-title"></h1>
-        <a href="#" className="header__content-link">
-          <img src="" alt="" />
+        <h1 className="header__content-title">КНИГИ КОТОРЫЕ 
+ТЫ ЕЩЕ НЕ ЧИТАЛ</h1>
+        <a href="#" className="header__content-link">Найти больше книг
+          <img src={toRight} alt="" />
         </a>
       </div>
     </div>
