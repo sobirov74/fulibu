@@ -1,0 +1,71 @@
+.main{
+    background: #3A3F4E;
+
+
+    &__registration{
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    &__reg{
+        display: flex;
+        background: rgba(26, 26, 26, 0.6);
+        backdrop-filter: blur(40px);
+        border-radius: 20px;
+        width: 100%;
+        padding: 50px 0 50px 50px;
+
+        &-left{
+            width: 50%;
+        }
+
+        &-title{
+            font-size: 48px;
+            line-height: 59px;
+            font-family: var(--montExtraBold);
+            max-width: 480px;
+            width: 100%;
+            color: #FFFFFF;
+        }
+
+        &-title a{
+            color: #747CA5;
+        }
+
+        &-descr{
+            max-width: 480px;
+            width: 100%;
+            color: #FFFFFF;
+            font-size: 18px;
+            line-height: 28px;
+            font-family: var(--montReg);
+            margin-top: 10px;
+            margin-bottom: 32px;
+        }
+
+        &-right{
+            width: 50%;
+        }
+
+        &-right img{
+            display: block;
+        }
+
+        &-icon{
+            cursor: pointer;
+        }
+
+        // &-circle1{
+        //     left: 0;
+        //     right: 0;
+        // }
+
+        // &-circle2{
+        //     right: 0;
+        //     left: 0;
+        // }
+    }
+}

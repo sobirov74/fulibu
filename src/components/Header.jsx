@@ -46,8 +46,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="header-circle1"></div>
-      <div className="header-circle2"></div>
+      <div className="circle1"></div>
+      <div className="circle2"></div>
     </header>
   );
 };

@@ -4,7 +4,7 @@
     padding-top: 30px;
     display: flex;
     position: relative;
-    z-index: -99;
+    z-index: 1;
     overflow: hidden;
 
     &__nav {
@@ -12,6 +12,12 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
+        z-index: 99;
+
+
+        &-searchIcon{
+            margin-right: 10px;
+        }
 
 
         &-searchIcon,
@@ -28,9 +34,14 @@
 
         }
 
+        &-mainLogo{
+            margin-right: 10px;
+        }
+
         &-select {
             display: flex;
             flex-direction: column;
+            margin-right: 10px;
         }
 
         &-selectBtn {
@@ -51,6 +62,7 @@
             font-family: var(--montBold);
             line-height: 22px;
             cursor: pointer;
+            z-index: 100;
         }
 
         &-selectBox {
@@ -63,7 +75,7 @@
             box-shadow: 0 3px 8px rgba(0, 0, 0, .24);
             padding: 10px;
             transition: all .5s ease-out;
-            // margin-top: 15px;
+            z-index: 100;
             position: absolute;
             top: 45px;
             left: -20px;
@@ -125,7 +137,7 @@
         }
     }
 
-    &-circle1 {
+    .circle1 {
         position: absolute;
         max-width: 915px;
         width: 100%;
@@ -138,7 +150,7 @@
         z-index: -1;
     }
 
-    &-circle2 {
+    .circle2 {
         position: absolute;
         max-width: 510px;
         width: 100%;
@@ -153,6 +165,31 @@
 
 }
 
+.circle1 {
+    position: absolute;
+    max-width: 915px;
+    width: 100%;
+    background: #635995;
+    box-shadow: 0px 4px 30px rgba(99, 89, 149, 0.5);
+    top: -63px;
+    right: -68px;
+    height: 915px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.circle2 {
+    position: absolute;
+    max-width: 510px;
+    width: 100%;
+    background: #EC7368;
+    box-shadow: 0px 4px 50px rgba(236, 115, 104, 0.5);
+    bottom: 0;
+    left: -91px;
+    height: 510px;
+    border-radius: 50%;
+    z-index: -1;
+}
 
 
 @media(max-width: 1200px) {
