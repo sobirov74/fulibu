@@ -1,79 +1,54 @@
-import React, { useState } from 'react';
+import React from "react";
 import searchIcon from "../assets/images/searchIcon.svg";
-import logo from "../assets/images/logo.svg"
+import logo from "../assets/images/logo.svg";
 import toRight from "../assets/images/toRight.svg";
 import user from "../assets/images/User.svg";
-
+import DropDown from "./functions/DropDown";
+import headerImg from '../assets/images/headerImg.png'
 
 const Header = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleToggle = () => {
-    setToggle(!toggle);
-  }
-
-  const [selected, setSelect] = useState('UZS');
-
-  const handleSelect = choose => {
-    setSelect(choose);
-    setToggle(false)
-  }
-
-  
   return (
     <header className="header">
-  <div className="container">
+      <div className="container">
+        <div className="header__nav">
+          <a href="#" className="header__nav-searchIcon">
+            <img className="header__nav-icon" src={searchIcon} alt="" />
+          </a>
 
-    <div className="header__nav">
-      <a href="#" className="header__nav-searchIcon">
-        <img className='header__nav-icon' src={searchIcon} alt="" />
-      </a>
+          <DropDown item1={"UZS"} item2={"USD"} />
 
-      <div className="header__nav-select">
-        <div className="header__nav-optionBox">
-      <button className="header__nav-selectBtn" onClick={handleToggle}>{selected}</button>
+          <a href="#" className="header__nav-mainLogo">
+            <img src={logo} alt="" />
+          </a>
 
-      {toggle && (
-        <div className="header__nav-selectBox">
+          <DropDown item1={"uz"} item2={"en"} />
 
-        <span className="header__nav-selectOption" onClick={() => handleSelect('UZS')}>UZS</span>
-        <span className="header__nav-selectOption" onClick={() => handleSelect('USD')}>USD</span>
-        
+
+          <a href="#" className="header__nav-logIcon">
+            <img className="header__nav-icon" src={user} alt="" />
+          </a>
         </div>
-      )}
 
-</div>
-</div>
+        <div className="header__content">
+          <div className="header__content-left">
+            <h1 className="header__content-title">
+              КНИГИ КОТОРЫЕ ТЫ ЕЩЕ НЕ ЧИТАЛ
+            </h1>
+            <a href="#" className="header__content-link">
+              Найти больше книг
+              <img src={toRight} alt="" />
+            </a>
+          </div>
 
-      {/* <a href="#" className="header__nav-currency">usd</a> */}
-      {/* <ul className="header__nav-dropdown">
-        <li><a href="" className="header__nav-dropLink">uzs</a></li>
-        <li><a href="" className="header__nav-dropLink">rubl</a></li>
-      </ul> */}
-      <a href="#" className="header__nav-mainLogo">
-        <img src={logo} alt="" />
-      </a>
-      <a href="#" className="header__nav-country">uz</a>
-
-      <a href="#" className="header__nav-logIcon">
-        <img className='header__nav-icon' src={user} alt="" />
-      </a>
-
-
-    </div>
-
-    <div className="header__content">
-      <div className="header__content-left">
-        <h1 className="header__content-title">КНИГИ КОТОРЫЕ 
-ТЫ ЕЩЕ НЕ ЧИТАЛ</h1>
-        <a href="#" className="header__content-link">Найти больше книг
-          <img src={toRight} alt="" />
-        </a>
+          <div className="header__content-right">
+            <img className="header__content-rightImg" src={headerImg} alt="" />
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
-  </header>
+      <div className="header-circle1"></div>
+      <div className="header-circle2"></div>
+    </header>
   );
 };
 
