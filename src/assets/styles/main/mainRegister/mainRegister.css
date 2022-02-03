@@ -1,5 +1,5 @@
 .main {
-  background: #3A3F4E;
+  background: #3a3f4e;
 }
 
 .main__registration {
@@ -10,8 +10,8 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .main__reg {
@@ -20,7 +20,7 @@
   display: flex;
   background: rgba(26, 26, 26, 0.6);
   -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
   border-radius: 20px;
   width: 1110px;
   padding: 50px 0 50px 50px;
@@ -33,11 +33,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .main__reg-title {
@@ -46,17 +46,17 @@
   font-family: var(--montExtraBold);
   max-width: 480px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .main__reg-title a {
-  color: #747CA5;
+  color: #747ca5;
 }
 
 .main__reg-descr {
   max-width: 480px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 18px;
   line-height: 28px;
   font-family: var(--montReg);
@@ -90,7 +90,7 @@
   font-size: 24px;
   line-height: 36px;
   font-family: var(--montBold);
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: capitalize;
 }
 
@@ -110,24 +110,24 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 210px;
   padding: 20px;
   background: rgba(26, 26, 26, 0.6);
   border-radius: 20px;
   -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
 }
 
 .main_recomend-cardAuthor {
   font-size: 12px;
   line-height: 18px;
   font-family: var(--montBold);
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
@@ -152,27 +152,28 @@
   right: 10px;
 }
 
-.main_recomend-cardLink1, .main_recomend-cardLink2 {
-  background: #479EFC;
+.main_recomend-cardLink1,
+.main_recomend-cardLink2 {
+  background: #479efc;
   -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 4px 0;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 36px;
   font-size: 8px;
   line-height: 12px;
   font-family: var(--montBold);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .main_recomend-cardLink2 {
-  background: #FE8D00;
+  background: #fe8d00;
 }
 
 .main_recomend-cardTitle {
@@ -181,7 +182,7 @@
   line-height: 18px;
   text-align: center;
   font-family: var(--montBold);
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 6.5px;
 }
 
@@ -192,12 +193,12 @@
   gap: 1px;
   width: 100%;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .main_recomend-cardStar {
-  color: #FE8D00;
+  color: #fe8d00;
   font-size: 9px;
 }
 
@@ -205,7 +206,7 @@
   font-size: 10px;
   line-height: 14px;
   font-family: var(--montBold);
-  color: #747CA5;
+  color: #747ca5;
 }
 
 .main_recomend-cardPriceBox {
@@ -213,8 +214,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-top: 5.5px;
 }
 
@@ -224,15 +225,15 @@
   display: flex;
   width: 220px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #FFFFFF;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #ffffff;
   font-size: 14px;
   line-height: 22px;
   font-family: var(--montReg);
-  background: #747CA5;
+  background: #747ca5;
   -webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   padding: 9px 0;
   margin: 0 auto;
@@ -241,10 +242,10 @@
 @media (max-width: 1200px) {
   .main_recomend-cards {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
 }
 /*# sourceMappingURL=mainRegister.css.map */
