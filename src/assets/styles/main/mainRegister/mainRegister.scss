@@ -1,0 +1,222 @@
+.main {
+    background: #3A3F4E;
+
+
+    &__registration {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    &__reg {
+        display: flex;
+        background: rgba(26, 26, 26, 0.6);
+        backdrop-filter: blur(40px);
+        border-radius: 20px;
+        width: 1110px;
+        // width: 100%;
+        padding: 50px 0 50px 50px;
+
+        &-left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &-title {
+            font-size: 48px;
+            line-height: 59px;
+            font-family: var(--montExtraBold);
+            max-width: 480px;
+            width: 100%;
+            color: #FFFFFF;
+        }
+
+        &-title a {
+            color: #747CA5;
+        }
+
+        &-descr {
+            max-width: 480px;
+            width: 100%;
+            color: #FFFFFF;
+            font-size: 18px;
+            line-height: 28px;
+            font-family: var(--montReg);
+            margin-top: 10px;
+            margin-bottom: 32px;
+        }
+
+        &-right {
+            width: 50%;
+        }
+
+        &-right img {
+            display: block;
+            // width: 100%;
+        }
+
+        &-icon {
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        &-box {
+            overflow: hidden;
+        }
+
+        // &-circle1{
+        //     left: 0;
+        //     right: 0;
+        // }
+
+        // &-circle2{
+        //     right: 0;
+        //     left: 0;
+        // }
+    }
+}
+
+.main_recomend {
+    margin-top: 30px;
+
+    &-title {
+        font-size: 24px;
+        line-height: 36px;
+        font-family: var(--montBold);
+        color: #FFFFFF;
+        text-transform: capitalize;
+    }
+
+    &-cards {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 210px;
+        padding: 20px;
+        background: rgba(26, 26, 26, 0.6);
+        border-radius: 20px;
+        backdrop-filter: blur(40px);
+
+        &Author {
+            font-size: 12px;
+            line-height: 18px;
+            font-family: var(--montBold);
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        &ImgBox {
+            position: relative;
+            width: 170px;
+            border-radius: 10px;
+
+        }
+
+        &ImgBox img {
+            width: 100%;
+            display: block;
+
+        }
+
+        &Btns {
+            display: flex;
+            gap: 5px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        &Link1,
+        &Link2 {
+            background: #479EFC;
+            box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            display: flex;
+            padding: 4px 0;
+            justify-content: center;
+            width: 36px;
+            font-size: 8px;
+            line-height: 12px;
+            font-family: var(--montBold);
+            color: #FFFFFF;
+        }
+
+        &Link2 {
+            background: #FE8D00;
+        }
+
+        &Title {
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+            font-family: var(--montBold);
+            color: #FFFFFF;
+            margin-bottom: 6.5px;
+        }
+
+        &Stars {
+            display: flex;
+            gap: 1px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        &Star {
+            color: #FE8D00;
+            font-size: 9px;
+        }
+
+        &Price {
+            font-size: 10px;
+            line-height: 14px;
+            font-family: var(--montBold);
+            color: #747CA5;
+
+            &Box {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5.5px;
+            }
+        }
+    }
+
+}
+
+.findMore-link {
+    display: flex;
+    width: 220px;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: var(--montReg);
+    background: #747CA5;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 9px 0;
+    margin: 0 auto;
+}
+
+@media(max-width: 1200px) {
+    .main_recomend{
+
+        &-cards{
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    }
+}
