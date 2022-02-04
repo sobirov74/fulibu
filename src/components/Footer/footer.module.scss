@@ -1,0 +1,95 @@
+.footer {
+    background: rgba(37, 39, 45, 1);
+    margin-top: 90px;
+    border-radius: 20px 20px 0px 0px;
+    padding: 30px 0;
+
+    &Top {
+        display: flex;
+    }
+
+    &Logo {
+        display: block;
+        margin-right: 185px;
+    }
+
+    &Fulibu {
+        display: flex;
+        flex-direction: column;
+        max-width: 255px;
+        width: 100%;
+
+        &Title {
+            font-size: 14px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: var(--montBold);
+            margin-bottom: 30px;
+        }
+
+        &Link {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 100%;
+            font-family: var(--montMedium);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+    }
+
+    &Bottom {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &Org {
+            font-size: 12px;
+            line-height: 18px;
+            font-family: var(--montReg);
+            color: #FFFFFF;
+        }
+
+    }
+
+    &icons {
+        display: flex;
+    }
+
+    &icon {
+        display: block;
+        margin-right: 42px;
+    }
+
+    &Bottom &icons &icon:last-child {
+        margin-right: 0;
+    }
+
+    &Comand {
+        display: flex;
+    }
+
+    &Descr {
+        color: #FFFFFF;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: var(--montReg);
+        margin-right: 22px;
+    }
+
+    &Innovate {
+        display: flex;
+
+        &Descr {
+            font-size: 9px;
+            line-height: 11px;
+            font-family: var(--montMedium);
+            color: #FFFFFF;
+            width: 63px;
+            margin-left: 5px;
+        }
+    }
+
+
+}

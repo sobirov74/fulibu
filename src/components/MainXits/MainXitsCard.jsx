@@ -7,6 +7,14 @@ import xitsImg3 from "../../assets/images/recomendImg3.png";
 import xitsImg4 from "../../assets/images/recomendImg4.png";
 import xitsImg5 from "../../assets/images/recomendImg2.png";
 import styles from "./mainxits.module.scss";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 
 const xits = [
@@ -58,8 +66,19 @@ export const MainXitsCard = () => {
   return (
 <div className={styles.main__xits_slides}>
 
-
+<Swiper
+style={{height: '280px'}}
+    EffectCoverflow={'none'}
+      spaceBetween={50}
+      slidesPerView={5}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      
+      ...
     {xits.map(xit => (
+
+<SwiperSlide>
         <div key={xit.id} className={styles.main__xits_slide}>
       <div className={styles.main__xitsImgBox}>
         <img src={xit.bookImg} className={styles.main__xits_slideImg} alt="" />
@@ -101,8 +120,10 @@ export const MainXitsCard = () => {
         </div>
       </div>
     </div>
+    </SwiperSlide>
     ))}
         
+    </Swiper>
     </div>
     
   );

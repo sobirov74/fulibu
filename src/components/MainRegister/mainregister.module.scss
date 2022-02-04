@@ -1,5 +1,4 @@
 .main {
-    background: #3A3F4E;
 
 
     &__registration {
@@ -19,14 +18,14 @@
         // width: 100%;
         padding: 50px 0 50px 50px;
 
-        &-left {
+        &_left {
             width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        &-title {
+        &_title {
             font-size: 48px;
             line-height: 59px;
             font-family: var(--montExtraBold);
@@ -35,11 +34,11 @@
             color: #FFFFFF;
         }
 
-        &-title a {
+        &_title a {
             color: #747CA5;
         }
 
-        &-descr {
+        &_descr {
             max-width: 480px;
             width: 100%;
             color: #FFFFFF;
@@ -50,31 +49,31 @@
             margin-bottom: 32px;
         }
 
-        &-right {
+        &_right {
             width: 50%;
         }
 
-        &-right img {
+        &_right img {
             display: block;
             // width: 100%;
         }
 
-        &-icon {
+        &_icon {
             cursor: pointer;
             background: transparent;
             border: none;
         }
 
-        &-box {
+        &_box {
             overflow: hidden;
         }
 
-        // &-circle1{
+        // &_circle1{
         //     left: 0;
         //     right: 0;
         // }
 
-        // &-circle2{
+        // &_circle2{
         //     right: 0;
         //     left: 0;
         // }
@@ -84,7 +83,7 @@
 .main_recomend {
     margin-top: 30px;
 
-    &-title {
+    &_title {
         font-size: 24px;
         line-height: 36px;
         font-family: var(--montBold);
@@ -92,7 +91,7 @@
         text-transform: capitalize;
     }
 
-    &-cards {
+    &_cards {
         margin-top: 20px;
         display: flex;
         gap: 15px;
@@ -100,7 +99,7 @@
         margin-bottom: 20px;
     }
 
-    &-card {
+    &_card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -196,7 +195,7 @@
 
 }
 
-.findMore-link {
+.findMore_link {
     display: flex;
     width: 220px;
     justify-content: center;
@@ -214,7 +213,7 @@
 @media(max-width: 1200px) {
     .main_recomend{
 
-        &-cards{
+        &_cards{
             flex-wrap: wrap;
             justify-content: space-evenly;
         }

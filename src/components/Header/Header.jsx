@@ -10,7 +10,7 @@ import styles from "./header.module.scss";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      <div className="container">
         <div className={styles.header__nav}>
           <a href="#" className={styles.header__nav_searchIcon}>
             <img className={styles.header__nav_icon} src={searchIcon} alt="" />

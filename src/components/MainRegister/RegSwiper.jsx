@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import styles from './mainregister.module.scss'
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -60,6 +61,8 @@ const state = [
   },
 ];
 
+
+
 const RegSwiper = () => {
   const swiper = useSwiper();
   return (
@@ -75,27 +78,27 @@ const RegSwiper = () => {
       {state.map((match) => (
         <SwiperSlide
           style={{ width: "1110px" }}
-          className="main__reg"
+          className={styles.main__reg}
           key={match.id}
         >
-          <div className="main__reg-left">
+          <div className={styles.main__reg_left}>
             <div>
-              <h3 className="main__reg-title">
+              <h3 className={styles.main__reg_title}>
                 <a href="">{match.outline}</a> {match.title}
               </h3>
 
-              <p className="main__reg-descr">{match.description}</p>
+              <p className={styles.main__reg_descr}>{match.description}</p>
             </div>
-            <div className="main__reg-dots">
+            <div className={styles.main__reg_dots}>
               <button
-                className="main__reg-icon"
+                className={styles.main__reg_icon}
                 onClick={() => swiper.slidePrev()}
               >
-                <img src={toLeft} alt="" />{" "}
+                <img src={toLeft} alt="" />
               </button>
 
               <button
-                className="main__reg-icon"
+                className={styles.main__reg_icon}
                 onClick={() => swiper.slideNext()}
               >
                 {" "}
@@ -104,7 +107,7 @@ const RegSwiper = () => {
             </div>
           </div>
 
-          <div className="main__reg-right">
+          <div className={styles.main__reg_right}>
             <img src={match.rightIcon} alt="" />
           </div>
         </SwiperSlide>

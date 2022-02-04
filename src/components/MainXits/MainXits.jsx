@@ -4,7 +4,7 @@ import { MainXitsCard } from "./MainXitsCard";
 const MainXits = () => {
   return (
     <div className={styles.main__xits}>
-      <div className={styles.container}>
+      <div className="container">
         <h3 className={styles.main__xits_title}>Хиты продаж</h3>
       </div>
 

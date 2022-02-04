@@ -4,6 +4,7 @@ import recomendImg3 from "../../assets/images/recomendImg3.png";
 import recomendImg4 from "../../assets/images/recomendImg4.png";
 import recomendImg5 from "../../assets/images/recomendImg5.png";
 import toRight from '../../assets/images/toRight.svg'
+import styles from './mainregister.module.scss'
 import { FaStar } from "react-icons/fa";
 
 const recomendationsList = [
@@ -46,38 +47,38 @@ const recomendationsList = [
 
 const MainRecomendations = () => {
   return (
-    <div className="main_recomend-cards">
+    <div className={styles.main_recomend_cards}>
        { recomendationsList.map(book => (
-           <div className="main_recomend-card" key={book.id}>
-        <h4 className="main_recomend-cardAuthor">{book.author}</h4>
+           <div className={styles.main_recomend_card} key={book.id}>
+        <h4 className={styles.main_recomend_cardAuthor}>{book.author}</h4>
 
-        <div className="main_recomend-cardImgBox">
+        <div className={styles.main_recomend_cardImgBox}>
           <img src={book.img} alt="" />
 
-          <div className="main_recomend-cardBtns">
-            <a href="" className="main_recomend-cardLink1">
+          <div className={styles.main_recomend_cardBtns}>
+            <a href="" className={styles.main_recomend_cardLink1}>
               Текст
             </a>
-            <a href="" className="main_recomend-cardLink2">
+            <a href="" className={styles.main_recomend_cardLink2}>
               Аудио
             </a>
           </div>
         </div>
-        <h4 className="main_recomend-cardTitle">
+        <h4 className={styles.main_recomend_cardTitle}>
           {book.title}
         </h4>
 
-        <div className="main_recomend-cardStars">
-          <FaStar className="main_recomend-cardStar" />
-          <FaStar className="main_recomend-cardStar" />
-          <FaStar className="main_recomend-cardStar" />
-          <FaStar className="main_recomend-cardStar" />
-          <FaStar className="main_recomend-cardStar" />
+        <div className={styles.main_recomend_cardStars}>
+          <FaStar className={styles.main_recomend_cardStar} />
+          <FaStar className={styles.main_recomend_cardStar} />
+          <FaStar className={styles.main_recomend_cardStar} />
+          <FaStar className={styles.main_recomend_cardStar} />
+          <FaStar className={styles.main_recomend_cardStar} />
         </div>
 
-        <div className="main_recomend-cardPriceBox">
-          <p className="main_recomend-cardPrice">{book.price}</p>
-          <a href="" className="main_recomend-cardPriceLink">
+        <div className={styles.main_recomend_cardPriceBox}>
+          <p className={styles.main_recomend_cardPrice}>{book.price}</p>
+          <a href="" className={styles.main_recomend_cardPriceLink}>
             <img src={toRight} alt="" />
           </a>
         </div>
