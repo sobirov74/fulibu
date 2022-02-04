@@ -10,7 +10,7 @@ const MainNews = () => {
 
         <MainRecomendations />
 
-        <a href="" className="findMore-link">
+        <a href="" className={styles.findMore_link}>
           Найти больше книг
           <img className={styles.findMore_linkImg} src={toRight} alt="" />
         </a>

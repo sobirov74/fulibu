@@ -12,7 +12,7 @@ const recomendationsList = [
       id:'1',
     author: "Мария Метлицкая",
     img: recomendImg1,
-    title: "Цветы и птицы Цветы и птицы ",
+    title: "Цветы и птицы",
     price: "1 222 230 UZS",
   },
   {

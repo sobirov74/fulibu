@@ -12,20 +12,22 @@
     color: #ffffff;
     font-family: var(--montBold);
   }
-
+  &_wrap {
+    width: 435px !important;
+  }
   &_slide {
-    max-width: 435px;
     width: 100%;
-    position: relative;
-    max-width: 435px;
-    width: 100%;background: rgba(26, 26, 26, 0.6);
+    background: rgba(26, 26, 26, 0.6);
     backdrop-filter: blur(40px);
     border-radius: 20px;
     margin-left: 15px;
+    display: flex;
+    padding-top: 20px;
+    padding-right: 20px;
   }
 
   &_slideImg {
-    margin-top: -20px;
+    margin-top: -40px;
     width: 160px;
     height: 230px;
   }
@@ -46,7 +48,9 @@
   }
 
   &ImgBox {
-    width: max-content;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
     margin-left: 20px;
     padding-bottom: 20px;
   }
@@ -64,21 +68,10 @@
 
   &_content {
     display: flex;
-    justify-content: flex-end;
-    padding: 0px 20px 20px 20px;
-    // background: rgba(26, 26, 26, 0.6);
-    // backdrop-filter: blur(40px);
-    // border-radius: 20px;
-    z-index: 1;
-    position: absolute;
-    height: 90%;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-
-    &Box {
-      width: 215px;
-    }
+    flex-direction: column;
+    width: 55%;
+    margin-left: 20px;
+    justify-content: space-around;
 
     &Title {
       color: #ffffff;
@@ -92,8 +85,6 @@
       line-height: 14px;
       font-family: var(--montReg);
       color: #999999;
-      margin-top: 10px;
-      margin-bottom: 11px;
     }
 
     &Descr {
@@ -125,15 +116,8 @@
       &Box {
         display: flex;
         justify-content: space-between;
-        margin-top: 33px;
+        // margin-top: 33px;
       }
     }
   }
 }
-
-
-
-
-  .swiper{
-  }
-

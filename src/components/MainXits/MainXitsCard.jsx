@@ -8,7 +8,9 @@ import xitsImg4 from "../../assets/images/recomendImg4.png";
 import xitsImg5 from "../../assets/images/recomendImg2.png";
 import styles from "./mainxits.module.scss";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import "swiper/css";
+import SwiperCore, { Autoplay } from "swiper";
+
+import "swiper/scss";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
@@ -16,115 +18,119 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+SwiperCore.use([Autoplay]);
 
 const xits = [
-    {
-        id: 1,
-        author: 'Марк Мэнсон',
-        title: 'Тонкое искусство пофигизма',
-        description: 'Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ',
-        bookImg: xitsImg1,
-        price: '11 230 UZS',
-    },
-    {
-        id: 2,
-        author: 'Андрей Курпатов',
-        title: 'Красная таблетка. Посмотри правде в глаза!',
-        description: 'Книга простым языком объясняет читателю, каким образом работает человеческий мозг. Без сложной терминологии автор говорит о самой природе сознания – емко, просто и с долей юмора. ',
-        bookImg: xitsImg2,
-        price: '11 230 UZS',
-    },
-    {
-        id: 3,
-        author: 'Марк Мэнсон',
-        title: 'Тонкое искусство пофигизма',
-        description: 'Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ',
-        bookImg: xitsImg3,
-        price: '11 230 UZS',
-    },
-    {
-        id: 4,
-        author: 'Марк Мэнсон',
-        title: 'Тонкое искусство пофигизма',
-        description: 'Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ',
-        bookImg: xitsImg4,
-        price: '11 230 UZS',
-    },
-    {
-        id: 5,
-        author: 'Марк Мэнсон',
-        title: 'Тонкое искусство пофигизма',
-        description: 'Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ',
-        bookImg: xitsImg5,
-        price: '11 230 UZS',
-    },
-]
-
-
+  {
+    id: 1,
+    author: "Марк Мэнсон",
+    title: "Тонкое искусство пофигизма",
+    description:
+      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
+    bookImg: xitsImg1,
+    price: "11 230 UZS",
+  },
+  {
+    id: 2,
+    author: "Андрей Курпатов",
+    title: "Красная таблетка. Посмотри правде в глаза!",
+    description:
+      "Книга простым языком объясняет читателю, каким образом работает человеческий мозг. Без сложной терминологии автор говорит о самой природе сознания – емко, просто и с долей юмора. ",
+    bookImg: xitsImg2,
+    price: "11 230 UZS",
+  },
+  {
+    id: 3,
+    author: "Марк Мэнсон",
+    title: "Тонкое искусство пофигизма",
+    description:
+      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
+    bookImg: xitsImg3,
+    price: "11 230 UZS",
+  },
+  {
+    id: 4,
+    author: "Марк Мэнсон",
+    title: "Тонкое искусство пофигизма",
+    description:
+      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
+    bookImg: xitsImg4,
+    price: "11 230 UZS",
+  },
+  {
+    id: 5,
+    author: "Марк Мэнсон",
+    title: "Тонкое искусство пофигизма",
+    description:
+      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
+    bookImg: xitsImg5,
+    price: "11 230 UZS",
+  },
+];
 
 export const MainXitsCard = () => {
   return (
-<div className={styles.main__xits_slides}>
+    <div className={styles.main__xits_slides}>
+      <Swiper
+        EffectCoverflow={"none"}
+        spaceBetween={50}
+        slidesPerView={"auto"}
+        loop={true}
+        className={styles.swiperContainer}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+      >
+        ...
+        {xits.map((xit) => (
+          <SwiperSlide className={styles.main__xits_wrap} key={xit.id}>
+            <div className={styles.main__xits_slide}>
+              <div className={styles.main__xitsImgBox}>
+                <img
+                  src={xit.bookImg}
+                  className={styles.main__xits_slideImg}
+                  alt=""
+                />
+                <div>
+                  <a href="" className={styles.main__xitsImgLink1}>
+                    Текст
+                  </a>
+                  <a href="" className={styles.main__xitsImgLink2}>
+                    Аудио
+                  </a>
+                </div>
+              </div>
 
-<Swiper
-style={{height: '280px'}}
-    EffectCoverflow={'none'}
-      spaceBetween={50}
-      slidesPerView={5}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      
-      ...
-    {xits.map(xit => (
+              <div className={styles.main__xits_content}>
+                <h4 className={styles.main__xits_contentTitle}>{xit.title}</h4>
+                <span className={styles.main__xits_contentAuthor}>
+                  {xit.author}
+                </span>
 
-<SwiperSlide>
-        <div key={xit.id} className={styles.main__xits_slide}>
-      <div className={styles.main__xitsImgBox}>
-        <img src={xit.bookImg} className={styles.main__xits_slideImg} alt="" />
-        <div>
-          <a href="" className={styles.main__xitsImgLink1}>
-            Текст
-          </a>
-          <a href="" className={styles.main__xitsImgLink2}>
-            Аудио
-          </a>
-        </div>
-      </div>
+                <div className={styles.main__xits_contentStars}>
+                  <FaStar className={styles.main__xits_contentStar} />
+                  <FaStar className={styles.main__xits_contentStar} />
+                  <FaStar className={styles.main__xits_contentStar} />
+                  <FaStar className={styles.main__xits_contentStar} />
+                  <FaStar className={styles.main__xits_contentStar} />
+                </div>
 
-      <div className={styles.main__xits_content}>
-        <div className={styles.main__xits_contentBox}>
-          <h4 className={styles.main__xits_contentTitle}>
-            {xit.title}
-          </h4>
-          <span className={styles.main__xits_contentAuthor}>{xit.author}</span>
+                <p className={styles.main__xits_contentDescr}>
+                  {xit.description}
+                </p>
 
-          <div className={styles.main__xits_contentStars}>
-            <FaStar className={styles.main__xits_contentStar} />
-            <FaStar className={styles.main__xits_contentStar} />
-            <FaStar className={styles.main__xits_contentStar} />
-            <FaStar className={styles.main__xits_contentStar} />
-            <FaStar className={styles.main__xits_contentStar} />
-          </div>
-
-          <p className={styles.main__xits_contentDescr}>
-            {xit.description}
-          </p>
-
-          <div className={styles.main__xits_contentPriceBox}>
-            <p className={styles.main__xits_contentPrice}>{xit.price}</p>
-            <a href="" className={styles.main__xits_contentPriceLink}>
-              <img src={toRight} alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
+                <div className={styles.main__xits_contentPriceBox}>
+                  <p className={styles.main__xits_contentPrice}>{xit.price}</p>
+                  <a href="" className={styles.main__xits_contentPriceLink}>
+                    <img src={toRight} alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
-    </SwiperSlide>
-    ))}
-        
-    </Swiper>
-    </div>
-    
   );
 };

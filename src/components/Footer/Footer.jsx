@@ -14,7 +14,7 @@ const Footer = () => {
             <img src={footerLogo} alt="" className={styles.footerLogoImg} />
           </div>
 
-          <div className={styles.footerFulibu} style={{ marginRight: "30px" }}>
+          <div className={styles.footerFulibu}>
             <h4 className={styles.footerFulibuTitle}>fulibu</h4>
 
             <a href="" className={styles.footerFulibuLink}>

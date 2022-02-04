@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import styles from './mainregister.module.scss'
+import styles from "./mainregister.module.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -17,6 +17,8 @@ import slideIcon5 from "../../assets/images/slideIcon5.svg";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import SlideNextButton from "./NextButton";
+import SlidePrevButton from "./PrevButton";
 
 const state = [
   {
@@ -61,14 +63,12 @@ const state = [
   },
 ];
 
-
-
 const RegSwiper = () => {
-  const swiper = useSwiper();
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      navigation
+      style={{zIndex: '0'}}
+      // navigation
       pagination={{ clickable: true }}
       spaceBetween={50}
       slidesPerView={1}
@@ -80,6 +80,11 @@ const RegSwiper = () => {
           style={{ width: "1110px" }}
           className={styles.main__reg}
           key={match.id}
+          loop={true}
+          autoplay={{
+            delay: 500,
+            disableOnInteraction: false,
+          }}
         >
           <div className={styles.main__reg_left}>
             <div>
@@ -90,20 +95,9 @@ const RegSwiper = () => {
               <p className={styles.main__reg_descr}>{match.description}</p>
             </div>
             <div className={styles.main__reg_dots}>
-              <button
-                className={styles.main__reg_icon}
-                onClick={() => swiper.slidePrev()}
-              >
-                <img src={toLeft} alt="" />
-              </button>
-
-              <button
-                className={styles.main__reg_icon}
-                onClick={() => swiper.slideNext()}
-              >
-                {" "}
-                <img src={toRight} alt="" />
-              </button>
+              
+              <SlidePrevButton />
+              <SlideNextButton />
             </div>
           </div>
 
