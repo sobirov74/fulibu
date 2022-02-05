@@ -67,18 +67,21 @@ const RegSwiper = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      style={{zIndex: '0'}}
+      style={{ zIndex: "0" }}
       // navigation
       pagination={{ clickable: true }}
-      spaceBetween={50}
+      spaceBetween={0}
+      // navigation
       slidesPerView={1}
+      className={styles.main__reg}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
+      {/* <div className={styles.styles.main__reg_content}> */}
       {state.map((match) => (
         <SwiperSlide
           style={{ width: "1110px" }}
-          className={styles.main__reg}
+          className={styles.main__reg_swiperSlide}
           key={match.id}
           loop={true}
           autoplay={{
@@ -94,11 +97,6 @@ const RegSwiper = () => {
 
               <p className={styles.main__reg_descr}>{match.description}</p>
             </div>
-            <div className={styles.main__reg_dots}>
-              
-              <SlidePrevButton />
-              <SlideNextButton />
-            </div>
           </div>
 
           <div className={styles.main__reg_right}>
@@ -106,6 +104,12 @@ const RegSwiper = () => {
           </div>
         </SwiperSlide>
       ))}
+
+      <div className={styles.main__reg_dots}>
+        <SlidePrevButton />
+        <SlideNextButton />
+      </div>
+      {/* </div> */}
     </Swiper>
   );
 };

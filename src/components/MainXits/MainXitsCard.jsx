@@ -77,10 +77,10 @@ export const MainXitsCard = () => {
         slidesPerView={"auto"}
         loop={true}
         className={styles.swiperContainer}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
       >
         ...
         {xits.map((xit) => (

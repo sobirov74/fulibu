@@ -12,9 +12,12 @@
     color: #ffffff;
     font-family: var(--montBold);
   }
+
   &_wrap {
     width: 435px !important;
+    padding-top: 30px;
   }
+
   &_slide {
     width: 100%;
     background: rgba(26, 26, 26, 0.6);
@@ -72,6 +75,7 @@
     width: 55%;
     margin-left: 20px;
     justify-content: space-around;
+    padding-bottom: 20px;
 
     &Title {
       color: #ffffff;
@@ -117,6 +121,68 @@
         display: flex;
         justify-content: space-between;
         // margin-top: 33px;
+      }
+    }
+  }
+}
+
+
+
+
+@media(max-width: 720px) {
+  .main__xits {
+    
+    &ImgBox div {
+      order: -1;
+      position: absolute;
+      left: 54%;
+      bottom: 40px;
+    }
+
+    &_slide{
+      padding-top: 10px;padding-right: 10px;
+    }
+
+    &_wrap {
+      width: 265px !important;
+    }
+
+    &ImgBox img {
+      width: 115px;
+      height: 150px;
+    }
+
+    &_content {
+
+      justify-content: start;
+
+      &Descr {
+        display: none;
+      }
+
+      &Title {
+        font-size: 8px;
+        line-height: 12px;
+      }
+
+      &Author {
+        font-size: 8px;
+        line-height: 12px;
+        margin-top: 5px;
+        margin-bottom: 6.5px;
+      }
+
+      &PriceBox{
+        position: absolute;
+        bottom: 5px;
+      }
+
+      &Price{
+        margin-right: 45px;
+      }
+
+      &Stars{
+        margin-top: 0;
       }
     }
   }
