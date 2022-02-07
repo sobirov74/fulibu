@@ -1,0 +1,89 @@
+.mainTop{
+
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+
+    &__content {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 99;
+    
+        &_title {
+          color: white;
+          font-size: 48px;
+          line-height: 59px;
+          font-family: var(--montExtraBold);
+          max-width: 500px;
+          width: 100%;
+          text-transform: uppercase;
+        }
+    
+        &_link {
+          font-size: 14px;
+          line-height: 22px;
+          font-family: var(--montReg);
+          color: #ffffff;
+          background: #747ca5;
+          box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          width: 220px;
+          padding: 9px 0;
+          margin-top: 20px;
+        }
+    
+        &_link img {
+          margin-left: 16px;
+        }
+    
+        &_left {
+          z-index: 10;
+        }
+    
+        &_right {
+          z-index: 1;
+          width: 50%;
+        }
+    
+        &_rightImg {
+          width: 100%;
+          display: block;
+        }
+      }
+}
+
+
+.mainTop::before {
+  content: "";
+  position: absolute;
+  max-width: 820px;
+  width: 100%;
+  background: #635995;
+  box-shadow: 0px 4px 30px rgba(99, 89, 149, 0.5);
+  top: -63px;
+  right: -68px;
+  height: 820px;
+  border-radius: 50%;
+  z-index: -1;
+  display: block;
+}
+
+.mainTop:after {
+    display: block;
+    content: "";
+    position: absolute;
+    max-width: 450px;
+    width: 100%;
+    background: #ec7368;
+    box-shadow: 0px 4px 50px rgba(236, 115, 104, 0.5);
+    bottom: 60px;
+    left: -91px;
+    height: 450px;
+    border-radius: 50%;
+    z-index: -1;
+  }

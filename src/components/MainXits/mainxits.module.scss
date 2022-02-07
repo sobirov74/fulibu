@@ -1,5 +1,6 @@
 .main__xits {
   margin-top: 20px;
+  position: relative;
 
   &_slides {
     margin-top: 40px;
@@ -129,9 +130,8 @@
 
 
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   .main__xits {
-    
     &ImgBox div {
       order: -1;
       position: absolute;
@@ -139,8 +139,9 @@
       bottom: 40px;
     }
 
-    &_slide{
-      padding-top: 10px;padding-right: 10px;
+    &_slide {
+      padding-top: 10px;
+      padding-right: 10px;
     }
 
     &_wrap {
@@ -153,7 +154,6 @@
     }
 
     &_content {
-
       justify-content: start;
 
       &Descr {
@@ -172,18 +172,20 @@
         margin-bottom: 6.5px;
       }
 
-      &PriceBox{
+      &PriceBox {
         position: absolute;
         bottom: 5px;
       }
 
-      &Price{
+      &Price {
         margin-right: 45px;
       }
 
-      &Stars{
+      &Stars {
         margin-top: 0;
       }
     }
   }
+
 }
+

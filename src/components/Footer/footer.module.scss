@@ -1,169 +1,168 @@
 .footer {
-    background: rgba(37, 39, 45, 1);
-    margin-top: 90px;
-    border-radius: 20px 20px 0px 0px;
-    padding: 30px 0;
+  background: rgba(26, 26, 26, 0.6);
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(40px);
+  margin-top: 90px;
+  border-radius: 20px 20px 0px 0px;
+  padding: 30px 0;
+  z-index: 100;
+  position: relative;
 
+  &Top {
+    display: flex;
+  }
+
+  &Logo {
+    display: block;
+    margin-right: 185px;
+  }
+
+  &Top &Fulibu:nth-of-type(1) {
+    margin-right: 30px;
+  }
+
+  &Fulibu {
+    display: flex;
+    flex-direction: column;
+    max-width: 255px;
+    width: 100%;
+
+    &Title {
+      font-size: 14px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-family: var(--montBold);
+      margin-bottom: 30px;
+    }
+
+    &Link {
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 100%;
+      font-family: var(--montMedium);
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+  }
+
+  &Bottom {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &Org {
+      font-size: 12px;
+      line-height: 18px;
+      font-family: var(--montReg);
+      color: #ffffff;
+    }
+  }
+
+  &icons {
+    display: flex;
+  }
+
+  &icon {
+    display: block;
+    margin-right: 42px;
+  }
+
+  &Bottom &icons &icon:last-child {
+    margin-right: 0;
+  }
+
+  &Comand {
+    display: flex;
+    align-items: center;
+  }
+
+  &Descr {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: var(--montReg);
+    margin-right: 22px;
+  }
+
+  &Innovate {
+    display: flex;
+
+    &Descr {
+      font-size: 9px;
+      line-height: 11px;
+      font-family: var(--montMedium);
+      color: #ffffff;
+      width: 63px;
+      margin-left: 5px;
+    }
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .footer {
     &Top {
-        display: flex;
-    }
-
-    &Logo {
-        display: block;
-        margin-right: 185px;
-    }
-
-    &Top &Fulibu:nth-of-type(1){
-        margin-right: 30px;
-    }
-
-    &Fulibu {
-        display: flex;
-        flex-direction: column;
-        max-width: 255px;
-        width: 100%;
-
-        &Title {
-            font-size: 14px;
-            line-height: 100%;
-            text-transform: uppercase;
-            color: #FFFFFF;
-            font-family: var(--montBold);
-            margin-bottom: 30px;
-        }
-
-        &Link {
-            color: #FFFFFF;
-            font-size: 14px;
-            line-height: 100%;
-            font-family: var(--montMedium);
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
+      padding: 0 40px;
     }
 
     &Bottom {
-        margin-top: 30px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+      padding: 0 40px;
+    }
+  }
+}
 
-        &Org {
-            font-size: 12px;
-            line-height: 18px;
-            font-family: var(--montReg);
-            color: #FFFFFF;
-        }
+@media (max-width: 960px) {
+  .footer {
+    &Logo {
+      display: none;
+    }
+  }
+}
 
+@media (max-width: 760px) {
+  .footer {
+    &Top {
+      flex-direction: column;
+      align-items: center;
     }
 
-    &icons {
-        display: flex;
+    &Fulibu {
+      margin-right: 0;
+      align-items: center;
+
+      &Link{
+        text-align: center;
+        line-height: 20px;
+      }
     }
 
-    &icon {
-        display: block;
-        margin-right: 42px;
-    }
-
-    &Bottom &icons &icon:last-child {
-        margin-right: 0;
-    }
-
-    &Comand {
-        display: flex;
+    &Top &Fulibu:nth-of-type(2) {
+      margin-bottom: 30px;
     }
 
     &Descr {
-        color: #FFFFFF;
-        font-size: 12px;
-        line-height: 18px;
-        font-family: var(--montReg);
-        margin-right: 22px;
+      display: none;
     }
-
-    &Innovate {
-        display: flex;
-
-        &Descr {
-            font-size: 9px;
-            line-height: 11px;
-            font-family: var(--montMedium);
-            color: #FFFFFF;
-            width: 63px;
-            margin-left: 5px;
-        }
-    }
-
-
+  }
 }
 
+@media (max-width: 480px) {
+  .footer {
+    &Bottom {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
 
-
-
-@media(max-width: 1200px) {
-    .footer{
-
-        &Top{
-            padding: 0 40px;
-        }
-
-        &Bottom{
-            padding: 0 40px;
-        }
+      &Org {
+        margin: 0 20px;
+      }
     }
-}
 
-
-@media(max-width: 960px) {
-    .footer{
-
-        &Logo{
-            display: none;
-        }
+    &icons {
+      order: -1;
+      margin-bottom: 35px;
     }
-}
-
-@media(max-width: 760px) {
-    .footer{
-
-        &Top{
-            flex-direction: column;
-            align-items: center;
-        }
-
-        &Fulibu{
-            margin-right: 0;
-            align-items: center ;
-        }
-
-        &Top &Fulibu:nth-of-type(2){
-            margin-bottom: 30px;
-        }  
-        
-        &Descr{
-            display: none;
-        }
-    }
-}
-
-@media(max-width: 480px) {
-    .footer{
-
-
-        &Bottom{
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            
-            &Org{
-                margin: 0 20px;
-
-            }
-        }
-
-        &icons{
-            order: -1;
-            margin-bottom: 35px;
-        }
-    }
+  }
 }

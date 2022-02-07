@@ -1,51 +1,89 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import searchIcon from "../../assets/images/searchIcon.svg";
 import logo from "../../assets/images/logo.svg";
-import toRight from "../../assets/images/toRight.svg";
 import user from "../../assets/images/User.svg";
 import DropDown from "./DropDown";
-import headerImg from "../../assets/images/headerImg.png";
 import styles from "./header.module.scss";
+import clsx from "clsx";
 
 const Header = () => {
+  const [visible, setVisible] = useState(true);
+  const [lastScroll, setLastScroll] = useState(0);
+  // const [prevPos, setPrevPos] = useState(0);
+
+  const handleScroll = () => {
+    let currentScroll = window.scrollY;
+    if (currentScroll > lastScroll) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    setLastScroll(currentScroll);
+    console.log(visible);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, true);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, true);
+    };
+  }, [lastScroll]);
+
+  // const handleScroll = () => {
+  //   const currentPos = window.pageYOffset;
+
+  //   setVisible( prevPos > currentPos && prevPos - currentPos > 70 || currentPos < 10)
+
+  //   setPrevPos(currentPos)
+  // }
+
+  // const headerStyles = {
+
+  //   paddingTop: '30px',
+  //   height: '95px',
+  //   position: 'fixed',
+  //   left: '0',
+  //   top: '0',
+  //   right: '0',
+  //   zIndex: '999',
+  //   transform: 'translateY(-135px)'
+  // }
+
+  // useEffect =(() => {
+  //   window.addEventListener('scroll', handleScroll)
+
+  //   return () => window.removeEventListener('scroll', handleScroll )
+  // }, [prevPos, visible, handleScroll]);
+
+  const Scroll = () => {
+    var scrol = window.pageYOffset;
+    console.log(scrol);
+  };
+
   return (
-    <header className={styles.header}>
-      <div className="container">
-        <div className={styles.header__nav}>
-          <a href="#" className={styles.header__nav_searchIcon}>
-            <img className={styles.header__nav_icon} src={searchIcon} alt="" />
-          </a>
+    <header
+      // onScroll={Scroll}
+      className={clsx(styles.header, visible && styles.show)}
+      style={{ position: "fixed" }}
+    >
+      <div className={styles.header__nav}>
+        <a href="#" className={styles.header__nav_searchIcon}>
+          <img className={styles.header__nav_icon} src={searchIcon} alt="" />
+        </a>
 
-          <DropDown item1={"UZS"} item2={"USD"} />
+        <DropDown item1={"UZS"} item2={"USD"} />
 
-          <a href="#" className={styles.header__nav_mainLogo}>
-            <img src={logo} alt="" />
-          </a>
+        <a href="#" className={styles.header__nav_mainLogo}>
+          <img src={logo} alt="" />
+        </a>
 
-          <DropDown item1={"uz"} item2={"en"} />
+        <DropDown item1={"uz"} item2={"en"} />
 
-          <a href="#" className={styles.header__nav_logIcon}>
-            <img className={styles.header__nav_icon} src={user} alt="" />
-          </a>
-        </div>
-
-        <div className={styles.header__content}>
-          <div className={styles.header__content_left}>
-            <h1 className={styles.header__content_title}>
-              КНИГИ КОТОРЫЕ ТЫ ЕЩЕ НЕ ЧИТАЛ
-            </h1>
-            <a href="#" className={styles.header__content_link}>
-              Найти больше книг
-              <img src={toRight} alt="" />
-            </a>
-          </div>
-
-          <div className={styles.header__content_right}>
-            <img className={styles.header__content_rightImg} src={headerImg} alt="" />
-          </div>
-        </div>
+        <a href="#" className={styles.header__nav_logIcon}>
+          <img className={styles.header__nav_icon} src={user} alt="" />
+        </a>
       </div>
-
     </header>
   );
 };

@@ -73,14 +73,14 @@ export const MainXitsCard = () => {
     <div className={styles.main__xits_slides}>
       <Swiper
         EffectCoverflow={"none"}
-        spaceBetween={50}
+        spaceBetween={25}
         slidesPerView={"auto"}
         loop={true}
         className={styles.swiperContainer}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
       >
         ...
         {xits.map((xit) => (

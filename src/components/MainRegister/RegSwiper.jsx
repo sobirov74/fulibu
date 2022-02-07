@@ -84,10 +84,10 @@ const RegSwiper = () => {
           className={styles.main__reg_swiperSlide}
           key={match.id}
           loop={true}
-          autoplay={{
-            delay: 500,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 500,
+          //   disableOnInteraction: false,
+          // }}
         >
           <div className={styles.main__reg_left}>
             <div>
@@ -107,6 +107,7 @@ const RegSwiper = () => {
 
       <div className={styles.main__reg_dots}>
         <SlidePrevButton />
+
         <SlideNextButton />
       </div>
       {/* </div> */}
