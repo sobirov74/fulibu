@@ -6,8 +6,8 @@ import xitsImg2 from "../../assets/images/xitsImg2.png";
 import xitsImg3 from "../../assets/images/recomendImg3.png";
 import xitsImg4 from "../../assets/images/recomendImg4.png";
 import xitsImg5 from "../../assets/images/recomendImg2.png";
-import styles from "./mainxits.module.scss";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import styles from "./mainnews.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 
 import "swiper/scss";

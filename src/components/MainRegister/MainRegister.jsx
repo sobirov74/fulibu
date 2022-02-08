@@ -6,7 +6,7 @@ import styles from "./mainregister.module.scss";
 
 const MainRegister = () => {
   return (
-    <React.Fragment>
+    <>
       <div className={styles.main__registration}>
         <div className="container">
             <RegSwiper />
@@ -25,7 +25,7 @@ const MainRegister = () => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

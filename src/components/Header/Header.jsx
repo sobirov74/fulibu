@@ -30,31 +30,6 @@ const Header = () => {
     };
   }, [lastScroll]);
 
-  // const handleScroll = () => {
-  //   const currentPos = window.pageYOffset;
-
-  //   setVisible( prevPos > currentPos && prevPos - currentPos > 70 || currentPos < 10)
-
-  //   setPrevPos(currentPos)
-  // }
-
-  // const headerStyles = {
-
-  //   paddingTop: '30px',
-  //   height: '95px',
-  //   position: 'fixed',
-  //   left: '0',
-  //   top: '0',
-  //   right: '0',
-  //   zIndex: '999',
-  //   transform: 'translateY(-135px)'
-  // }
-
-  // useEffect =(() => {
-  //   window.addEventListener('scroll', handleScroll)
-
-  //   return () => window.removeEventListener('scroll', handleScroll )
-  // }, [prevPos, visible, handleScroll]);
 
   const Scroll = () => {
     var scrol = window.pageYOffset;

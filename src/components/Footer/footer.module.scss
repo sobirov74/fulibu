@@ -8,6 +8,7 @@
   z-index: 100;
   position: relative;
 
+
   &Top {
     display: flex;
   }
@@ -102,6 +103,9 @@
 }
 
 
+
+
+
 @media (max-width: 1200px) {
   .footer {
     &Top {
@@ -147,6 +151,9 @@
       display: none;
     }
   }
+
+
+
 }
 
 @media (max-width: 480px) {
