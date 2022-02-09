@@ -81,13 +81,12 @@ const MainRecomendations = () => {
   return (
     <div className={styles.main_recomend_cards}>
       <Swiper
-        EffectCoverflow={"none"}
         spaceBetween={25}
-        slidesPerView={'auto'}
+        slidesPerView={"auto"}
         loop={true}
         className={styles.swiperContainer}
         autoplay={{
-          delay: 3500, 
+          delay: 3500,
           disableOnInteraction: false,
         }}
       >
@@ -128,10 +127,8 @@ const MainRecomendations = () => {
           </SwiperSlide>
         ))}
 
-        
         <div className={styles.overlay}></div>
       </Swiper>
-
     </div>
   );
 };

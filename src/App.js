@@ -5,11 +5,11 @@ import MainRegister from "./components/MainRegister/MainRegister";
 import MainNews from './components/MainNews/MainNews';
 import Footer from "./components/Footer/Footer";
 import MainTop from "./components/MainTop/MainTop";
-import ParallaxLayer from "./components/MainTop/ParallaxLayer";
+import ParallaxLayer from "./components/Parallax/ParallaxLayer";
 
 const App = () => (
   <>
-  <ParallaxLayer />
+  <ParallaxLayer />   
     <Header />
     <main className="main">
       <MainTop />

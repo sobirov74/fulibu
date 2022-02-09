@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './maintop.module.scss'
 import toRight from "../../assets/images/toRight.svg";
 import mainTopImg from "../../assets/images/mainTop.png";
-import Parallax from "parallax-js";
-import CircleBg from '../circleBg/CircleBg';
 
 const MainTop = () => {
   // const scene1 = useRef();
@@ -11,7 +9,7 @@ const MainTop = () => {
 
   return <div className={styles.mainTop}>
 
-    <CircleBg transform={{transform: 'rotate(0deg)'}} />
+    {/* <CircleBg transform={{transform: 'rotate(0deg)'}} /> */}
         <div className="container">
           <div className={styles.mainTop__content}>
             <div className={styles.mainTop__content_left}>

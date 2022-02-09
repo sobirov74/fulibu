@@ -1,43 +1,37 @@
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-.container{
-    max-width: 1110px;
-    width: 100%;
-    margin: 0 auto;
-
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-body{
-    background: #3a3f4e;
+body {
+  background: #3a3f4e;
 }
 
-@media(max-width: 1200px) {
-    .container{
-        padding: 0 40px;
-    }
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
 }
 
-@media(max-width: 480px) {
-    .container{
-        padding: 0 20px;
-    }
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 
-
-    
-
-:root{
-    --robotoReg: 'Roboto-Regular';
-    --montReg: 'Montserrat-Regular';
-    --montBold: 'Montserrat-Bold';
-    --montExtraBold: 'Montserrat-ExtraBold';
-    --montMedium: 'Montserrat-Medium';
-    --montSemiBold: 'Montserrat-SemiBold';
-
+:root {
+  --montReg: "Montserrat-Regular";
+  --montBold: "Montserrat-Bold";
+  --montExtraBold: "Montserrat-ExtraBold";
+  --montMedium: "Montserrat-Medium";
+  --montSemiBold: "Montserrat-SemiBold";
 }

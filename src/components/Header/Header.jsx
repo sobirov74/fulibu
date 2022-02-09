@@ -3,6 +3,7 @@ import searchIcon from "../../assets/images/searchIcon.svg";
 import logo from "../../assets/images/logo.svg";
 import user from "../../assets/images/User.svg";
 import DropDown from "./DropDown";
+import "react-dropdown/style.css";
 import styles from "./header.module.scss";
 import clsx from "clsx";
 
@@ -19,7 +20,6 @@ const Header = () => {
       setVisible(true);
     }
     setLastScroll(currentScroll);
-    console.log(visible);
   };
 
   useEffect(() => {
@@ -29,12 +29,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll, true);
     };
   }, [lastScroll]);
-
-
-  const Scroll = () => {
-    var scrol = window.pageYOffset;
-    console.log(scrol);
-  };
 
   return (
     <header

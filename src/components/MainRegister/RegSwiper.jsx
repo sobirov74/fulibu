@@ -74,8 +74,8 @@ const RegSwiper = () => {
       // navigation
       slidesPerView={1}
       className={styles.main__reg}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       {/* <div className={styles.styles.main__reg_content}> */}
       {state.map((match) => (

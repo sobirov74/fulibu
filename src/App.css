@@ -31,9 +31,6 @@
   transition: 0.5s;
 }
 
-.sticked {
-  top: -300px !important;
-}
 .rotated {
   transform: rotate(180deg);
 }
@@ -43,14 +40,30 @@
 
 .parallax {
   width: 100% !important;
-  height: 1200px;
+  height: 100% !important;
+  overflow-y: visible;
+  min-height: 1000px;
+  display: flex !important;
+  align-items: center;
+  top: -20px;
 }
 
 .parallax-wrapper {
   position: relative !important;
-  width: 100%;
+  width: 100% !important;
   height: 100% !important;
 }
+
+.wrap {
+  position: relative;
+}
+.wrap-overlay {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
 
 @media (max-width: 1200px) {
   .swiper-pagination {

@@ -72,7 +72,6 @@ export const MainXitsCard = () => {
   return (
     <div className={styles.main__xits_slides}>
       <Swiper
-        EffectCoverflow={"none"}
         spaceBetween={25}
         slidesPerView={"auto"}
         loop={true}
