@@ -63,19 +63,17 @@ const state = [
   },
 ];
 
-
-const matchOutline = ({ match }) => {
-  if (match.id === 2 || match.id === 5) {
-    return (<h3 className={styles.main__reg_title}>
-      {match.title}<a href="">{match.outline}</a>
-    </h3>)
-  } if (match.id === 1 || match.id === 3 || match.id === 4) {
-    return (<h3 className={styles.main__reg_title}>
-      <a href="">{match.outline}</a> {match.title}
-    </h3>)
-  }
-}
-
+// const matchOutline = ({ match }) => {
+//   if (match.id === 2 || match.id === 5) {
+//     return (<h3 className={styles.main__reg_title}>
+//       {match.title}<a href="">{match.outline}</a>
+//     </h3>)
+//   } if (match.id === 1 || match.id === 3 || match.id === 4) {
+//     return (<h3 className={styles.main__reg_title}>
+//       <a href="">{match.outline}</a> {match.title}
+//     </h3>)
+//   }
+// }
 
 const RegSwiper = () => {
   return (
@@ -96,7 +94,11 @@ const RegSwiper = () => {
         >
           <div className={styles.main__reg_left}>
             <div>
-              {() => matchOutline(match)}
+              {/* {() => matchOutline(match)} */}
+
+              <h3 className={styles.main__reg_title}>
+                <a href="">{match.outline}</a> {match.title}
+              </h3>
 
               <p className={styles.main__reg_descr}>{match.description}</p>
             </div>

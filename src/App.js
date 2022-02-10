@@ -1,24 +1,23 @@
 import "./App.css";
 import React from "react";
 import Header from "./components/Header/Header";
-import MainRegister from "./components/MainRegister/MainRegister";
-import MainNews from './components/MainNews/MainNews';
 import Footer from "./components/Footer/Footer";
-import MainTop from "./components/MainTop/MainTop";
 import ParallaxLayer from "./components/Parallax/ParallaxLayer";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import MainPage from "./components/MainPage";
 
 const App = () => (
-  <>
-  <ParallaxLayer />   
+  <BrowserRouter>
+    <ParallaxLayer />
     <Header />
     <main className="main">
-      <MainTop />
-      <MainRegister />
-      <MainNews />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
     </main>
 
-      <Footer />
-  </>
+    <Footer />
+  </BrowserRouter>
 );
 
 export default App;

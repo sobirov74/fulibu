@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './maintop.module.scss'
 import toRight from "../../assets/images/toRight.svg";
 import mainTopImg from "../../assets/images/mainTop.png";
+import MainTopSlide from './MainTopSlide';
 
 const MainTop = () => {
   // const scene1 = useRef();
@@ -22,13 +23,8 @@ const MainTop = () => {
               </a>
             </div>
 
-            <div className={styles.mainTop__content_right}>
-              <img
-                className={styles.mainTop__content_rightImg}
-                src={mainTopImg}
-                alt=""
-              />
-            </div>
+           <MainTopSlide/>
+
           </div>
         </div>
   </div>;
