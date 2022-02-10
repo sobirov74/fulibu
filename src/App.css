@@ -2,7 +2,7 @@
   text-align: start !important;
 }
 
-.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
@@ -34,6 +34,7 @@
 .rotated {
   transform: rotate(180deg);
 }
+
 .down {
   bottom: -30% !important;
 }
@@ -57,11 +58,79 @@
 .wrap {
   position: relative;
 }
+
+.Dropdown-control {
+  background: #434864 !important;
+  border-radius: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer !important;
+  text-transform: uppercase;
+  position: absolute;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dropdown-placeholder {
+  font-family: var(--montBold);
+  color: #ffffff;
+}
+
+.Dropdown-arrow{
+  display: none !important;
+}
+
+.Dropdown-menu{
+  
+  display: flex;
+  flex-direction: column;
+  width: 80px !important;
+  border-radius: 10px;
+  border: none !important;
+  color: #fff;
+  background: #747ca5 !important  ;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24) !important;
+  padding: 10px;
+  transition: all 0.5s ease-out;
+  z-index: 100;
+  position: absolute;
+  top: 45px !important;
+  left: -20px !important;
+}
+
+.Dropdown-option{
+  background: transparent !important;
+  color: #ffffff !important;
+
+}
+
+.Dropdown-option .is-selected{
+  background: transparent !important;
+  
+  color: #ffffff !important;
+  font-family: var(--montBold);
+  line-height: 22px;
+  cursor: pointer;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
 .wrap-overlay {
   overflow: hidden;
   width: 100%;
   position: absolute;
   z-index: -1;
+}
+
+.Dropdown-placeholder {
+  font-size: 12px;
+  line-height: 18px;
+  font-family: var(--montBold);
 }
 
 
@@ -76,7 +145,7 @@
     align-items: center !important;
   }
 
-  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-horizontal>.swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {

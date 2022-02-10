@@ -58,42 +58,45 @@ const state = [
     title: "Наконец ",
     outline: "Spark",
     description:
-      "Никогда такого не было, что бы за прочтение книг дарили автомобили. А вот мы дарим, быстрее читай книги и побеждай. <br /> Не упусти шанс!",
+      "Никогда такого не было, что бы за прочтение книг дарили автомобили. А вот мы дарим, быстрее читай книги и побеждай. Не упусти шанс!",
     rightIcon: slideIcon5,
   },
 ];
+
+
+const matchOutline = ({ match }) => {
+  if (match.id === 2 || match.id === 5) {
+    return (<h3 className={styles.main__reg_title}>
+      {match.title}<a href="">{match.outline}</a>
+    </h3>)
+  } if (match.id === 1 || match.id === 3 || match.id === 4) {
+    return (<h3 className={styles.main__reg_title}>
+      <a href="">{match.outline}</a> {match.title}
+    </h3>)
+  }
+}
+
 
 const RegSwiper = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       style={{ zIndex: "0" }}
-      // navigation
       pagination={{ clickable: true }}
       spaceBetween={0}
-      // navigation
       slidesPerView={1}
       className={styles.main__reg}
-      // onSlideChange={() => console.log("slide change")}
-      // onSwiper={(swiper) => console.log(swiper)}
     >
-      {/* <div className={styles.styles.main__reg_content}> */}
       {state.map((match) => (
         <SwiperSlide
           style={{ width: "1110px" }}
           className={styles.main__reg_swiperSlide}
           key={match.id}
           loop={true}
-          // autoplay={{
-          //   delay: 500,
-          //   disableOnInteraction: false,
-          // }}
         >
           <div className={styles.main__reg_left}>
             <div>
-              <h3 className={styles.main__reg_title}>
-                <a href="">{match.outline}</a> {match.title}
-              </h3>
+              {() => matchOutline(match)}
 
               <p className={styles.main__reg_descr}>{match.description}</p>
             </div>
@@ -110,7 +113,6 @@ const RegSwiper = () => {
 
         <SlideNextButton />
       </div>
-      {/* </div> */}
     </Swiper>
   );
 };
