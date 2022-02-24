@@ -2,7 +2,7 @@
   text-align: start !important;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
@@ -81,12 +81,11 @@
   color: #ffffff;
 }
 
-.Dropdown-arrow{
+.Dropdown-arrow {
   display: none !important;
 }
 
-.Dropdown-menu{
-  
+.Dropdown-menu {
   display: flex;
   flex-direction: column;
   width: 80px !important;
@@ -103,15 +102,14 @@
   left: -20px !important;
 }
 
-.Dropdown-option{
+.Dropdown-option {
   background: transparent !important;
   color: #ffffff !important;
-
 }
 
-.Dropdown-option .is-selected{
+.Dropdown-option .is-selected {
   background: transparent !important;
-  
+
   color: #ffffff !important;
   font-family: var(--montBold);
   line-height: 22px;
@@ -133,7 +131,6 @@
   font-family: var(--montBold);
 }
 
-
 @media (max-width: 1200px) {
   .swiper-pagination {
     text-align: start !important;
@@ -145,7 +142,7 @@
     align-items: center !important;
   }
 
-  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
@@ -154,6 +151,19 @@
     left: auto !important;
   }
 }
+
+.liginField{
+
+  width: 100%;
+  background: rgba(26, 26, 26, 0.6);
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 14px 0 14px 20px;
+}
+
 
 @media (max-width: 480px) {
   .swiper-pagination-bullet {

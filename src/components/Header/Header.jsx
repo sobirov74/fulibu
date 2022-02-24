@@ -6,6 +6,12 @@ import DropDown from "./DropDown";
 import "react-dropdown/style.css";
 import styles from "./header.module.scss";
 import clsx from "clsx";
+import LoginPage from "./LoginPage/LoginPage";
+import { NavLink } from "react-router-dom";
+
+const handleActive = () => {
+  const login = document.querySelector()
+};
 
 const Header = () => {
   const [visible, setVisible] = useState(true);
@@ -49,10 +55,16 @@ const Header = () => {
 
         <DropDown item1={"uz"} item2={"en"} />
 
+        <NavLink className='nav-link' to='/LoginPage'>
+
         <a href="#" className={styles.header__nav_logIcon}>
           <img className={styles.header__nav_icon} src={user} alt="" />
         </a>
+        </NavLink>
+
       </div>
+
+      {/* <LoginPage/> */}
     </header>
   );
 };
