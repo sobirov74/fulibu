@@ -77,6 +77,9 @@ const state = [
 
 const RegSwiper = () => {
   return (
+
+    <>
+    
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       style={{ zIndex: "0" }}
@@ -116,6 +119,8 @@ const RegSwiper = () => {
         <SlideNextButton />
       </div>
     </Swiper>
+
+    </>
   );
 };
 

@@ -79,6 +79,8 @@ const recomendationsList = [
 
 const MainRecomendations = () => {
   return (
+    <>
+    <h3 className={styles.main_recomend_title}>рекомендации</h3>
     <div className={styles.main_recomend_cards}>
       <Swiper
         spaceBetween={25}
@@ -130,6 +132,7 @@ const MainRecomendations = () => {
         <div className={styles.overlay}></div>
       </Swiper>
     </div>
+    </>
   );
 };
 

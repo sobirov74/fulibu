@@ -15,7 +15,7 @@ const MainRegister = () => {
     <div className={styles.circle1 main__reg_circle1}></div> */}
 
           <div className={styles.main_recomend}>
-            <h3 className={styles.main_recomend_title}>рекомендации</h3>
+            
             <MainRecomendations />
 
             <a href="#" className={styles.findMore_link}>
