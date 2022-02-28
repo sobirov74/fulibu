@@ -17,6 +17,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Link } from "react-router-dom";
 
 SwiperCore.use([Autoplay]);
 
@@ -68,6 +69,10 @@ const xits = [
   },
 ];
 
+const handlePage = (title) => {
+  console.log(title);
+};
+
 export const MainXitsCard = () => {
   return (
     <div className={styles.main__xits_slides}>
@@ -83,7 +88,11 @@ export const MainXitsCard = () => {
       >
         ...
         {xits.map((xit) => (
-          <SwiperSlide className={styles.main__xits_wrap} key={xit.id}>
+          <SwiperSlide
+            onClick={() => handlePage(xit.title)}
+            className={styles.main__xits_wrap}
+            key={xit.id}
+          >
             <div className={styles.main__xits_slide}>
               <div className={styles.main__xitsImgBox}>
                 <img
@@ -92,12 +101,12 @@ export const MainXitsCard = () => {
                   alt=""
                 />
                 <div>
-                  <a href="" className={styles.main__xitsImgLink1}>
+                  <Link to="/" className={styles.main__xitsImgLink1}>
                     Текст
-                  </a>
-                  <a href="" className={styles.main__xitsImgLink2}>
+                  </Link>
+                  <Link to="/" className={styles.main__xitsImgLink2}>
                     Аудио
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -121,9 +130,9 @@ export const MainXitsCard = () => {
 
                 <div className={styles.main__xits_contentPriceBox}>
                   <p className={styles.main__xits_contentPrice}>{xit.price}</p>
-                  <a href="" className={styles.main__xits_contentPriceLink}>
+                  <Link to="/" className={styles.main__xits_contentPriceLink}>
                     <img src={toRight} alt="" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

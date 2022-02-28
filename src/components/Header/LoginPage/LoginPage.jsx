@@ -3,7 +3,7 @@ import styles from "../header.module.scss";
 import close from "../../../assets/images/close.svg";
 import LoginIcon1 from "../../../assets/images/LoginIcon1.svg";
 import { Link } from "react-router-dom";
-import { Formik, Field, Form  } from "formik";
+import Input from './Input'
 
 const LoginPage = () => {
   return (
@@ -19,17 +19,7 @@ const LoginPage = () => {
 
             <h2 className={styles.loginTitle}>ВХОД В АККАУНТ</h2>
 
-            <Formik 
-            initialValues={{
-              telNum: '+998 ',
-            }}>
-              <Form style={{display: "flex", flexDirection: "column"}}>
-                <label className={styles.loginLabel} >Введите свой номер телефона</label>
-                <Field type='text' name='telNum' className='liginField' />
-                <button className={styles.loginBtn}>Получить код</button>
-              </Form>
-              
-            </Formik>
+            <Input/>
           </div>
         </div>
       </div>

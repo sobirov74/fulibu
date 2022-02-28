@@ -4,6 +4,7 @@ import MainRecomendations from '../MainRegister/MainRecomendations'
 import MainRegister from '../MainRegister/MainRegister'
 import MainTop from '../MainTop/MainTop'
 import CommTop from './CommTop'
+import styles from './commtop.module.scss'
 
 const CommCard = () => {
   return (
@@ -12,12 +13,14 @@ const CommCard = () => {
         <div className="container">
       <CommTop />
       {/* <MainRegister /> */}
+
+    <h3 className={styles.commSlideTitle}>рекомендации</h3>
       <MainRecomendations />
       </div>
     </main>
     
 
-    {/* <Footer/> */}
+    <Footer/>
     </>
   )
 }

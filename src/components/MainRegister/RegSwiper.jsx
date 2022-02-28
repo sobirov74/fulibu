@@ -19,6 +19,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import SlideNextButton from "./NextButton";
 import SlidePrevButton from "./PrevButton";
+import { Link } from "react-router-dom";
 
 const state = [
   {
@@ -63,63 +64,48 @@ const state = [
   },
 ];
 
-// const matchOutline = ({ match }) => {
-//   if (match.id === 2 || match.id === 5) {
-//     return (<h3 className={styles.main__reg_title}>
-//       {match.title}<a href="">{match.outline}</a>
-//     </h3>)
-//   } if (match.id === 1 || match.id === 3 || match.id === 4) {
-//     return (<h3 className={styles.main__reg_title}>
-//       <a href="">{match.outline}</a> {match.title}
-//     </h3>)
-//   }
-// }
-
 const RegSwiper = () => {
   return (
-
     <>
-    
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      style={{ zIndex: "0" }}
-      pagination={{ clickable: true }}
-      spaceBetween={0}
-      slidesPerView={1}
-      className={styles.main__reg}
-    >
-      {state.map((match) => (
-        <SwiperSlide
-          style={{ width: "1110px" }}
-          className={styles.main__reg_swiperSlide}
-          key={match.id}
-          loop={true}
-        >
-          <div className={styles.main__reg_left}>
-            <div>
-              {/* {() => matchOutline(match)} */}
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        style={{ zIndex: "0" }}
+        pagination={{ clickable: true }}
+        spaceBetween={0}
+        slidesPerView={1}
+        className={styles.main__reg}
+      >
+        {state.map((match) => (
+          <SwiperSlide
+            style={{ width: "1110px" }}
+            className={styles.main__reg_swiperSlide}
+            key={match.id}
+            loop={true}
+          >
+            <div className={styles.main__reg_left}>
+              <div>
+                {/* {() => matchOutline(match)} */}
 
-              <h3 className={styles.main__reg_title}>
-                <a href="">{match.outline}</a> {match.title}
-              </h3>
+                <h3 className={styles.main__reg_title}>
+                  <Link to="/">{match.outline}</Link> {match.title}
+                </h3>
 
-              <p className={styles.main__reg_descr}>{match.description}</p>
+                <p className={styles.main__reg_descr}>{match.description}</p>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.main__reg_right}>
-            <img src={match.rightIcon} alt="" />
-          </div>
-        </SwiperSlide>
-      ))}
+            <div className={styles.main__reg_right}>
+              <img src={match.rightIcon} alt="" />
+            </div>
+          </SwiperSlide>
+        ))}
 
-      <div className={styles.main__reg_dots}>
-        <SlidePrevButton />
+        <div className={styles.main__reg_dots}>
+          <SlidePrevButton />
 
-        <SlideNextButton />
-      </div>
-    </Swiper>
-
+          <SlideNextButton />
+        </div>
+      </Swiper>
     </>
   );
 };

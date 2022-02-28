@@ -4,6 +4,7 @@ import insta from "../../assets/images/Telegram.svg";
 import tg from "../../assets/images/Instagram.svg";
 import facebook from "../../assets/images/Facebook.svg";
 import innovateIcon from "../../assets/images/InnovateIcon.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,35 +18,35 @@ const Footer = () => {
           <div className={styles.footerFulibu}>
             <h4 className={styles.footerFulibuTitle}>fulibu</h4>
 
-            <a href="" className={styles.footerFulibuLink}>
+            <Link to="/" className={styles.footerFulibuLink}>
               О компании
-            </a>
-            <a href="" className={styles.footerFulibuLink}>
+            </Link>
+            <Link to="/" className={styles.footerFulibuLink}>
               Публичная оферта
-            </a>
-            <a href="" className={styles.footerFulibuLink}>
+            </Link>
+            <Link to="/" className={styles.footerFulibuLink}>
               Служба поддержки
-            </a>
-            <a href="" className={styles.footerFulibuLink}>
+            </Link>
+            <Link to="/" className={styles.footerFulibuLink}>
               Контакты
-            </a>
+            </Link>
           </div>
 
           <div className={styles.footerFulibu}>
             <h4 className={styles.footerFulibuTitle}>Сотрудничество</h4>
 
-            <a href="" className={styles.footerFulibuLink}>
+            <Link to="/" className={styles.footerFulibuLink}>
               Издательствам
-            </a>
-            <a href="" className={styles.footerFulibuLink}>
+            </Link>
+            <Link to="/" className={styles.footerFulibuLink}>
               Авторам{" "}
-            </a>
-            <a href="" className={styles.footerFulibuLink}>
+            </Link>
+            <Link to="/" className={styles.footerFulibuLink}>
               Библиотекам
-            </a>
-            <a href="" className={styles.footerFulibuLink}>
+            </Link>
+            <Link to="/" className={styles.footerFulibuLink}>
               Вебмастерам
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -53,24 +54,26 @@ const Footer = () => {
           <p className={styles.footerBottomOrg}>© ООО «FULIBU»</p>
 
           <div className={styles.footericons}>
-                <a href="" className={styles.footericon}>
-                    <img src={insta} alt="" />
-                </a>
-                <a href="" className={styles.footericon}>
-                    <img src={tg} alt="" />
-                </a>
-                <a href="" className={styles.footericon}>
-                    <img src={facebook} alt="" />
-                </a>
+            <Link to="/" className={styles.footericon}>
+              <img src={insta} alt="" />
+            </Link>
+            <Link to="/" className={styles.footericon}>
+              <img src={tg} alt="" />
+            </Link>
+            <Link to="/" className={styles.footericon}>
+              <img src={facebook} alt="" />
+            </Link>
           </div>
 
           <div className={styles.footerComand}>
-              <p className={styles.footerDescr}>Разработано командой </p>
+            <p className={styles.footerDescr}>Разработано командой </p>
 
-              <div className={styles.footerInnovate}>
-                  <img src={innovateIcon} alt="" />
-                  <p className={styles.footerInnovateDescr}>Innovative Development Group</p>
-              </div>
+            <div className={styles.footerInnovate}>
+              <img src={innovateIcon} alt="" />
+              <p className={styles.footerInnovateDescr}>
+                Innovative Development Group
+              </p>
+            </div>
           </div>
         </div>
       </div>

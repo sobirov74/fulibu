@@ -2,6 +2,7 @@ import styles from "./mainnews.module.scss";
 import MainRecomendations from "../MainRegister/MainRecomendations";
 import toRight from "../../assets/images/toRight.svg";
 import { MainXitsCard } from "./MainXitsCard";
+import { Link } from "react-router-dom";
 
 const MainNews = () => {
   return (
@@ -20,10 +21,10 @@ const MainNews = () => {
 
           <MainRecomendations />
 
-          <a href="" className={styles.findMore_link}>
+          <Link to="/" className={styles.findMore_link}>
             Найти больше книг
             <img className={styles.findMore_linkImg} src={toRight} alt="" />
-          </a>
+          </Link>
         </div>
       </div>
     </>

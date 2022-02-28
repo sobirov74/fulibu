@@ -7,10 +7,10 @@ import "react-dropdown/style.css";
 import styles from "./header.module.scss";
 import clsx from "clsx";
 import LoginPage from "./LoginPage/LoginPage";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const handleActive = () => {
-  const login = document.querySelector()
+  const login = document.querySelector();
 };
 
 const Header = () => {
@@ -43,25 +43,23 @@ const Header = () => {
       style={{ position: "fixed" }}
     >
       <div className={styles.header__nav}>
-        <a href="#" className={styles.header__nav_searchIcon}>
+        <Link to="/" className={styles.header__nav_searchIcon}>
           <img className={styles.header__nav_icon} src={searchIcon} alt="" />
-        </a>
+        </Link>
 
         <DropDown item1={"UZS"} item2={"USD"} />
 
-        <a href="#" className={styles.header__nav_mainLogo}>
+        <Link to="/" className={styles.header__nav_mainLogo}>
           <img src={logo} alt="" />
-        </a>
+        </Link>
 
         <DropDown item1={"uz"} item2={"en"} />
 
-        <NavLink className='nav-link' to='/LoginPage'>
-
-        <a href="#" className={styles.header__nav_logIcon}>
+        {/* <NavLink className="nav-link" to="/LoginPage"> */}
+        <Link to="/LoginPage" className={styles.header__nav_logIcon}>
           <img className={styles.header__nav_icon} src={user} alt="" />
-        </a>
-        </NavLink>
-
+        </Link>
+        {/* </NavLink> */}
       </div>
 
       {/* <LoginPage/> */}
