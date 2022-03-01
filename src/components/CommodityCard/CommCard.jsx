@@ -1,28 +1,31 @@
-import React from 'react'
-import Footer from '../Footer/Footer'
-import MainRecomendations from '../MainRegister/MainRecomendations'
-import MainRegister from '../MainRegister/MainRegister'
-import MainTop from '../MainTop/MainTop'
-import CommTop from './CommTop'
-import styles from './commtop.module.scss'
+import React from "react";
+import { useParams } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import { xits } from "../MainNews/MainXitsCard";
+import MainRecomendations, {
+  recomendationsList,
+} from "../MainRegister/MainRecomendations";
+import CommTop from "./CommTop";
+import styles from "./commtop.module.scss";
 
 const CommCard = () => {
+  const { id } = useParams();
+  const values = (recomendationsList, xits);
+  const book = values.find((book) => book.id === id);
   return (
     <>
-    <main>
+      <main>
         <div className="container">
-      <CommTop />
-      {/* <MainRegister /> */}
+          <CommTop data={book} />
 
-    <h3 className={styles.commSlideTitle}>рекомендации</h3>
-      <MainRecomendations />
-      </div>
-    </main>
-    
+          <h3 className={styles.commSlideTitle}>рекомендации</h3>
+          <MainRecomendations />
+        </div>
+      </main>
 
-    <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default CommCard
+export default CommCard;

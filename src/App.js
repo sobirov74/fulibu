@@ -12,11 +12,11 @@ const App = () => (
   <BrowserRouter>
     <ParallaxLayer />
     <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/LoginPage" element={<LoginPage />} />
-        <Route path="/CommodityCard" element={<CommCard />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/LoginPage" element={<LoginPage />} />
+      <Route path="/CommodityCard/:id" element={<CommCard />} />
+    </Routes>
 
     {/* <Footer /> */}
   </BrowserRouter>

@@ -5,6 +5,7 @@ import { MainXitsCard } from "./MainXitsCard";
 import { Link } from "react-router-dom";
 
 const MainNews = () => {
+
   return (
     <>
       <div className={styles.main__xits}>

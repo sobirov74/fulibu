@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 
 const state = [
   {
-    id: 1,
+    id: "1",
     title: "и читай книги",
     outline: "Регистрируйся ",
     description:
@@ -31,7 +31,7 @@ const state = [
     rightIcon: slideIcon1,
   },
   {
-    id: 2,
+    id: "2",
     title: "Покупай книгу и ",
     outline: "наслаждайся",
     description:
@@ -39,7 +39,7 @@ const state = [
     rightIcon: slideIcon2,
   },
   {
-    id: 3,
+    id: "3",
     title: "  и зарабатывай",
     outline: "Приглашай ",
     description:
@@ -47,7 +47,7 @@ const state = [
     rightIcon: slideIcon3,
   },
   {
-    id: 4,
+    id: "4",
     title: " это не только возврат!",
     outline: "КЭШБЭК",
     description:
@@ -55,7 +55,7 @@ const state = [
     rightIcon: slideIcon4,
   },
   {
-    id: 5,
+    id: "5",
     title: "Наконец ",
     outline: "Spark",
     description:
@@ -75,8 +75,23 @@ const RegSwiper = () => {
         slidesPerView={1}
         className={styles.main__reg}
       >
-        {state.map((match) => (
-          <SwiperSlide
+        {state.map((match) => {
+          const ChangeTitleOrder = () => {
+            if (match.id === "2" || match.id === "5") {
+              return (
+                <h3 className={styles.main__reg_title}>
+                  {" "}
+                  {match.title} <Link to="/">{match.outline}</Link>{" "}
+                </h3>
+              );
+            } else {
+              return <h3 className={styles.main__reg_title}>
+                <Link to="/">{match.outline}</Link> {match.title}
+              </h3>;
+            }
+          };
+
+          return <SwiperSlide
             style={{ width: "1110px" }}
             className={styles.main__reg_swiperSlide}
             key={match.id}
@@ -84,12 +99,7 @@ const RegSwiper = () => {
           >
             <div className={styles.main__reg_left}>
               <div>
-                {/* {() => matchOutline(match)} */}
-
-                <h3 className={styles.main__reg_title}>
-                  <Link to="/">{match.outline}</Link> {match.title}
-                </h3>
-
+                <ChangeTitleOrder />
                 <p className={styles.main__reg_descr}>{match.description}</p>
               </div>
             </div>
@@ -97,8 +107,8 @@ const RegSwiper = () => {
             <div className={styles.main__reg_right}>
               <img src={match.rightIcon} alt="" />
             </div>
-          </SwiperSlide>
-        ))}
+          </SwiperSlide>;
+        })}
 
         <div className={styles.main__reg_dots}>
           <SlidePrevButton />

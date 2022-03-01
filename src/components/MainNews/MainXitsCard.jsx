@@ -1,11 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import toRight from "../../assets/images/toRight.svg";
-import xitsImg1 from "../../assets/images/xitsImg1.png";
-import xitsImg2 from "../../assets/images/xitsImg2.png";
-import xitsImg3 from "../../assets/images/recomendImg3.png";
-import xitsImg4 from "../../assets/images/recomendImg4.png";
-import xitsImg5 from "../../assets/images/recomendImg2.png";
+
 import styles from "./mainnews.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
@@ -18,56 +14,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import { books } from "../../LibraryOfBooks/Books";
 
 SwiperCore.use([Autoplay]);
 
-const xits = [
-  {
-    id: 1,
-    author: "Марк Мэнсон",
-    title: "Тонкое искусство пофигизма",
-    description:
-      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
-    bookImg: xitsImg1,
-    price: "11 230 UZS",
-  },
-  {
-    id: 2,
-    author: "Андрей Курпатов",
-    title: "Красная таблетка. Посмотри правде в глаза!",
-    description:
-      "Книга простым языком объясняет читателю, каким образом работает человеческий мозг. Без сложной терминологии автор говорит о самой природе сознания – емко, просто и с долей юмора. ",
-    bookImg: xitsImg2,
-    price: "11 230 UZS",
-  },
-  {
-    id: 3,
-    author: "Марк Мэнсон",
-    title: "Тонкое искусство пофигизма",
-    description:
-      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
-    bookImg: xitsImg3,
-    price: "11 230 UZS",
-  },
-  {
-    id: 4,
-    author: "Марк Мэнсон",
-    title: "Тонкое искусство пофигизма",
-    description:
-      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
-    bookImg: xitsImg4,
-    price: "11 230 UZS",
-  },
-  {
-    id: 5,
-    author: "Марк Мэнсон",
-    title: "Тонкое искусство пофигизма",
-    description:
-      "Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Как какой-то малец придумал приложение и заработал кучу денег, статьями в духе ",
-    bookImg: xitsImg5,
-    price: "11 230 UZS",
-  },
-];
+export const xits = books;
 
 const handlePage = (title) => {
   console.log(title);
@@ -87,8 +38,9 @@ export const MainXitsCard = () => {
         }}
       >
         ...
-        {xits.map((xit) => (
-          <SwiperSlide
+        {xits.map((xit) => {
+          if(xit.category === 'xits')
+          return <SwiperSlide
             onClick={() => handlePage(xit.title)}
             className={styles.main__xits_wrap}
             key={xit.id}
@@ -96,7 +48,7 @@ export const MainXitsCard = () => {
             <div className={styles.main__xits_slide}>
               <div className={styles.main__xitsImgBox}>
                 <img
-                  src={xit.bookImg}
+                  src={xit.img}
                   className={styles.main__xits_slideImg}
                   alt=""
                 />
@@ -130,14 +82,14 @@ export const MainXitsCard = () => {
 
                 <div className={styles.main__xits_contentPriceBox}>
                   <p className={styles.main__xits_contentPrice}>{xit.price}</p>
-                  <Link to="/" className={styles.main__xits_contentPriceLink}>
+                  <Link to={`/CommodityCard/${xit.id}`} className={styles.main__xits_contentPriceLink}>
                     <img src={toRight} alt="" />
                   </Link>
                 </div>
               </div>
             </div>
           </SwiperSlide>
-        ))}
+        })}
       </Swiper>
     </div>
   );

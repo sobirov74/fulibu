@@ -169,6 +169,11 @@ input::-webkit-inner-spin-button {
   padding: 14px 0 14px 20px;
 }
 
+
+.mt-5{  
+  margin-top: 180px;
+}
+
 @media (max-width: 480px) {
   .swiper-pagination-bullet {
     margin-right: 15px !important;

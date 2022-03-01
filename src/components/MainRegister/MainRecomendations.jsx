@@ -16,68 +16,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
-
+import { books } from "../../LibraryOfBooks/Books";
 
 SwiperCore.use([Autoplay]);
 
-const recomendationsList = [
-  {
-    id: "1",
-    author: "Мария Метлицкая",
-    img: recomendImg1,
-    title: "Цветы и птицы",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "2",
-    author: "Макс Глебов",
-    img: recomendImg2,
-    title: "Асиметричный",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "3",
-    author: "Татьяна Устинова",
-    img: recomendImg3,
-    title: "Пляжный детектив",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "4",
-    author: "Эрика Адамс",
-    img: recomendImg4,
-    title: "Похищенная для монстра",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "5",
-    author: "Анастасия Маркова",
-    img: recomendImg5,
-    title: "Анастасия Маркова",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "6",
-    author: "Татьяна Устинова",
-    img: recomendImg3,
-    title: "Пляжный детектив",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "7",
-    author: "Макс Глебов",
-    img: recomendImg2,
-    title: "Асиметричный",
-    price: "1 222 230 UZS",
-  },
-  {
-    id: "9",
-    author: "Эрика Адамс",
-    img: recomendImg4,
-    title: "Похищенная для монстра",
-    price: "1 222 230 UZS",
-  },
-];
+
+export const recomendationsList = books;
+
 
 const MainRecomendations = () => {
   return (
@@ -93,8 +38,9 @@ const MainRecomendations = () => {
             disableOnInteraction: false,
           }}
         >
-          {recomendationsList.map((book) => (
-            <SwiperSlide className={styles.main_recomend_wrap} key={book.id}>
+          {recomendationsList.map((book) => {
+            if(book.category === 'recomendation')
+            return <SwiperSlide className={styles.main_recomend_wrap} key={book.id}>
               <div className={styles.main_recomend_card}>
                 <h4 className={styles.main_recomend_cardAuthor}>
                   {book.author}
@@ -124,13 +70,22 @@ const MainRecomendations = () => {
 
                 <div className={styles.main_recomend_cardPriceBox}>
                   <p className={styles.main_recomend_cardPrice}>{book.price}</p>
-                  <Link to="/" className={styles.main_recomend_cardPriceLink}>
+
+                  {/* ============================ */}
+
+                  <Link
+                    to={`/CommodityCard/${book.id}`}
+                    // onClick={() => handleDatas(book)}
+                    className={styles.main_recomend_cardPriceLink}
+                  >
                     <img src={toRight} alt="" />
                   </Link>
+
+                  {/* ===================== */}
                 </div>
               </div>
             </SwiperSlide>
-          ))}
+          })}
 
           <div className={styles.overlay}></div>
         </Swiper>
@@ -138,6 +93,5 @@ const MainRecomendations = () => {
     </>
   );
 };
-
 
 export default MainRecomendations;
