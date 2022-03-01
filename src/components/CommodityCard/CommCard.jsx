@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import { xits } from "../MainNews/MainXitsCard";
+import { MainXitsCard, xits } from "../MainNews/MainXitsCard";
 import MainRecomendations, {
   recomendationsList,
 } from "../MainRegister/MainRecomendations";
@@ -9,9 +9,19 @@ import CommTop from "./CommTop";
 import styles from "./commtop.module.scss";
 
 const CommCard = () => {
-  const { id } = useParams();
+  const { id, category } = useParams();
   const values = (recomendationsList, xits);
   const book = values.find((book) => book.id === id);
+  const categorise = values.map(cat => cat.category === category)
+  const ChangeList =() => {
+    if(categorise.category === 'recomendation'){
+      return <MainRecomendations />
+    }else{
+      return <MainXitsCard />
+    }
+
+    console.log(categorise);
+  }
   return (
     <>
       <main>
@@ -20,6 +30,7 @@ const CommCard = () => {
 
           <h3 className={styles.commSlideTitle}>рекомендации</h3>
           <MainRecomendations />
+          <MainXitsCard />
         </div>
       </main>
 

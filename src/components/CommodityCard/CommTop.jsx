@@ -1,23 +1,45 @@
 import React from "react";
 import styles from "./commtop.module.scss";
 import pricetag from "../../assets/images/Commodities/pricetag.svg";
-import save from "../../assets/images/Commodities/save.svg";
+import saveIcon from "../../assets/images/Commodities/save.svg";
 import book from "../../assets/images/Commodities/book.svg";
-import { FaStar } from "react-icons/fa";
+import { FaBookmark, FaRegBookmark, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
-const CommTop = ({ data }: any) => {
 
-  const Description = ()=> {
-    if(!data.description){
+const CommTop = ({ data }) => {
+
+  const Description = () => {
+    if (!data.description) {
       return <p className={styles.commDescr}>Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Соцсети изобилуют историями на тему, как какой-то малец придумал приложение и заработал кучу денег, статьями в духе «Тысяча и один способ быть счастливым», а фото во френдленте создают впечатление, что окружающие живут лучше и интереснее, чем мы.Однако наша зацикленность на позитиве и успехе лишь напоминает о том, чего мы не достигли, о мечтах, которые не сбылись. Как же стать по-настоящему счастливым? Популярный блогер Марк Мэнсон в книге «Тонкое искусство пофигизма» предлагает свой, оригинальный подход к этому вопросу. Его жизненная философия проста – необходимо научиться искусству пофигизма. Определив то, до чего вам действительно есть дело, нужно уметь наплевать на все второстепен ное, забить на трудности, послать к черту чужое мнение и быть готовым взглянуть в лицо неудачам и показатьим средний палец.</p>
-    }else{
+    } else {
       return <p className={styles.commDescr}>{data.description}</p>
     }
   }
 
-  console.log(data, "current");
+
+  const [save, setSave] = useState(false)
+
+  const handleSave = () => {
+    console.log(save);
+    setSave(!save)
+  }
+
+ const ChangeSaveBtn = ()=> {
+   if(!save){
+     return <Link to="" className={`${styles.commRightBtn} ${styles.active}`} onClick={handleSave}>
+     <FaRegBookmark className={styles.commRightBtnIcon} /> Добавить в библиотеку
+   </Link>
+   }else  {
+    return <Link to="" className={`${styles.commRightBtn}`} onClick={handleSave}>
+    <FaBookmark className={styles.commRightBtnIcon} /> В библиотеке
+  </Link>
+   }
+ }
+
+    console.log(data, "current");
   return (
     <div className="container">
       <div className="mt-5">
@@ -108,9 +130,15 @@ const CommTop = ({ data }: any) => {
             </div>
 
             <div className={styles.commRightLinks}>
-              <Link to="/" className={styles.commRightBtn}>
-                <img src={save} alt="" /> В библиотеке
-              </Link>
+
+
+
+              {/* ===================================== */}
+              
+        <ChangeSaveBtn/>
+              {/* ================================ */}
+
+
               <Link to="/" className={styles.commRightBtn}>
                 <img src={book} alt="" /> Купить{" "}
               </Link>

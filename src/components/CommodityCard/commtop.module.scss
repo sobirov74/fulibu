@@ -125,9 +125,11 @@
       line-height: 22px;
       font-family: var(--montBold);
       color: #ffffff;
+      align-items: center;
 
-      img {
-        margin-right: 20px;
+      &Icon {
+        margin-right: 15px;
+        font-size: 18px;
       }
     }
     &Links &Btn:nth-of-type(2) {
@@ -212,6 +214,11 @@
     color: #ffffff;
     text-transform: capitalize;
   }
+}
+
+
+.active{
+  background-color: #FE8D00;
 }
 
 // ============  Media Start  ========================
