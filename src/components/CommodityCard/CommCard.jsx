@@ -9,19 +9,10 @@ import CommTop from "./CommTop";
 import styles from "./commtop.module.scss";
 
 const CommCard = () => {
-  const { id, category } = useParams();
+  const { id } = useParams();
   const values = (recomendationsList, xits);
   const book = values.find((book) => book.id === id);
-  const categorise = values.map(cat => cat.category === category)
-  const ChangeList =() => {
-    if(categorise.category === 'recomendation'){
-      return <MainRecomendations />
-    }else{
-      return <MainXitsCard />
-    }
-
-    console.log(categorise);
-  }
+  
   return (
     <>
       <main>
@@ -35,6 +26,8 @@ const CommCard = () => {
       </main>
 
       <Footer />
+
+    
     </>
   );
 };

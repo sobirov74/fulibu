@@ -7,6 +7,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import MainPage from "./components/MainPage";
 import LoginPage from "./components/Header/LoginPage/LoginPage";
 import CommCard from "./components/CommodityCard/CommCard";
+import Search from "./components/SearchingPage/Search";
 
 const App = () => (
   <BrowserRouter>
@@ -16,6 +17,7 @@ const App = () => (
       <Route path="/" element={<MainPage />} />
       <Route path="/LoginPage" element={<LoginPage />} />
       <Route path="/CommodityCard/:id" element={<CommCard />} />
+      <Route path="/search" element={<Search />} />
     </Routes>
 
     {/* <Footer /> */}

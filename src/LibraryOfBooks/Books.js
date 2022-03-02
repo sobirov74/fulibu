@@ -20,6 +20,7 @@ export const books = [
         title: "Цветы и птицы",
         price: "1 222 230 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '2',
@@ -28,6 +29,8 @@ export const books = [
         title: "Асиметричный",
         price: "1 222 230 UZS",
         category: 'recomendation',
+        saved: false,
+        
       },
       {
         id: '3',
@@ -36,6 +39,7 @@ export const books = [
         title: "Пляжный детектив",
         price: "1 222 230 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '4',
@@ -44,6 +48,7 @@ export const books = [
         title: "Похищенная для монстра",
         price: "1 222 230 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '5',
@@ -52,6 +57,7 @@ export const books = [
         title: "Черная вдова ищет мужа",
         price: "1 230 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '6',
@@ -60,6 +66,7 @@ export const books = [
         title: "Пляжный детектив",
         price: "1 222 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '7',
@@ -68,6 +75,7 @@ export const books = [
         title: "Асиметричный",
         price: "14 479 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '9',
@@ -76,6 +84,7 @@ export const books = [
         title: "Похищенная для монстра",
         price: "1 222 230 UZS",
         category: 'recomendation',
+        saved: false,
       },
       {
         id: '10',
@@ -86,6 +95,7 @@ export const books = [
         img: xitsImg1,
         price: "11 230 UZS",
         category: 'xits',
+        saved: false,
       },
       {
         id: '11',
@@ -96,6 +106,7 @@ export const books = [
         img: xitsImg2,
         price: "11 230 UZS",
         category: 'xits',
+        saved: false,
       },
       {
         id: '12',
@@ -106,6 +117,7 @@ export const books = [
         img: xitsImg3,
         price: "11 230 UZS",
         category: 'xits',
+        saved: false,
       },
       {
         id: '13',
@@ -116,6 +128,8 @@ export const books = [
         img: xitsImg4,
         price: "11 230 UZS",
         category: 'xits',
+        saved: false,
+
       },
       {
         id: '14',
@@ -126,6 +140,7 @@ export const books = [
         img: xitsImg5,
         price: "11 230 UZS",
         category: 'xits',
+        saved: false,
       },
 ]
 

@@ -16,7 +16,6 @@ const handleActive = () => {
 const Header = () => {
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
-  // const [prevPos, setPrevPos] = useState(0);
 
   const handleScroll = () => {
     let currentScroll = window.scrollY;
@@ -43,7 +42,7 @@ const Header = () => {
       style={{ position: "fixed" }}
     >
       <div className={styles.header__nav}>
-        <Link to="/" className={styles.header__nav_searchIcon}>
+        <Link to="/search" className={styles.header__nav_searchIcon}>
           <img className={styles.header__nav_icon} src={searchIcon} alt="" />
         </Link>
 
@@ -55,14 +54,11 @@ const Header = () => {
 
         <DropDown item1={"uz"} item2={"en"} />
 
-        {/* <NavLink className="nav-link" to="/LoginPage"> */}
         <Link to="/LoginPage" className={styles.header__nav_logIcon}>
           <img className={styles.header__nav_icon} src={user} alt="" />
         </Link>
-        {/* </NavLink> */}
       </div>
 
-      {/* <LoginPage/> */}
     </header>
   );
 };

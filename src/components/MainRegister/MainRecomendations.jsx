@@ -1,12 +1,7 @@
-import recomendImg1 from "../../assets/images/recomendImg1.png";
-import recomendImg2 from "../../assets/images/recomendImg2.png";
-import recomendImg3 from "../../assets/images/recomendImg3.png";
-import recomendImg4 from "../../assets/images/recomendImg4.png";
-import recomendImg5 from "../../assets/images/recomendImg5.png";
 import toRight from "../../assets/images/toRight.svg";
 import styles from "./mainregister.module.scss";
 import { FaStar } from "react-icons/fa";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import "swiper/scss";
 import "swiper/css/navigation";
@@ -71,17 +66,13 @@ const MainRecomendations = () => {
                 <div className={styles.main_recomend_cardPriceBox}>
                   <p className={styles.main_recomend_cardPrice}>{book.price}</p>
 
-                  {/* ============================ */}
-
                   <Link
                     to={`/CommodityCard/${book.id}`}
-                    // onClick={() => handleDatas(book)}
                     className={styles.main_recomend_cardPriceLink}
                   >
                     <img src={toRight} alt="" />
                   </Link>
 
-                  {/* ===================== */}
                 </div>
               </div>
             </SwiperSlide>

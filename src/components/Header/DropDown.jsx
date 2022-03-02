@@ -24,7 +24,7 @@ const DropDown = ({ item1, item2 }) => {
   return (
     <div>
       <Dropdown
-        className={styles.header__nav_select}
+        className='header__nav_select'
         options={options}
         onChange={handleSelect}
         value={selected}

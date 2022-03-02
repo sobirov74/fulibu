@@ -23,7 +23,6 @@ const CommTop = ({ data }) => {
   const [save, setSave] = useState(false)
 
   const handleSave = () => {
-    console.log(save);
     setSave(!save)
   }
 
@@ -38,8 +37,6 @@ const CommTop = ({ data }) => {
   </Link>
    }
  }
-
-    console.log(data, "current");
   return (
     <div className="container">
       <div className="mt-5">
@@ -130,13 +127,8 @@ const CommTop = ({ data }) => {
             </div>
 
             <div className={styles.commRightLinks}>
-
-
-
-              {/* ===================================== */}
               
         <ChangeSaveBtn/>
-              {/* ================================ */}
 
 
               <Link to="/" className={styles.commRightBtn}>
