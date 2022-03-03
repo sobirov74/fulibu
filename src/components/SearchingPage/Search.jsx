@@ -10,6 +10,7 @@ import toRight from "../../assets/images/toRight.svg";
 import cardStyles from "../MainRegister/mainregister.module.scss";
 
 import { books } from "../../LibraryOfBooks/Books";
+import Footer from './../Footer/Footer';
 
 const Search = () => {
   const years = ["all"];
@@ -20,6 +21,7 @@ const Search = () => {
   }
 
   const cards = books;
+  
 
   return (
     <>
@@ -32,16 +34,24 @@ const Search = () => {
           </div>
 
           <div className={styles.searchBox}>
+
+
+
             <div className={styles.searchInputBox}>
               <input
                 type="text"
                 className={styles.searchInput}
                 placeholder="Введите название книги"
               />
+              <img src={searchIcon} alt="" />
               <button className={styles.searchBtn} type="submit">
                 <img src={searchIcon} alt="" /> Найти
               </button>
             </div>
+
+
+
+            
             <div className={styles.searchDropDowns}>
               <ChooseDropDown
                 className={styles.searchDropDown}
@@ -126,6 +136,8 @@ const Search = () => {
           </div>
         </div>
       </main>
+
+      <Footer/>
     </>
   );
 };

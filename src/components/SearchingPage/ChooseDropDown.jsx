@@ -4,10 +4,8 @@ import Dropdown from "react-dropdown";
 
 const ChooseDropDown = ({ items, label }) => {
   const options = items;
-  console.log(options[0]);
   const defaultOption = options[0]
 
-  console.log(defaultOption);
 
   const [select, setSelect] = useState(defaultOption);
   const [toggle, setToggle] = useState(false);

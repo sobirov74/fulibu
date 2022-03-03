@@ -111,7 +111,7 @@ input::-webkit-inner-spin-button {
 .header__nav_select .Dropdown-menu {
   display: flex;
   flex-direction: column;
-  width: 80px !important;
+  width: fit-content !important;
   border-radius: 10px;
   border: none !important;
   color: #fff;
@@ -163,10 +163,17 @@ input::-webkit-inner-spin-button {
 
 .search-dropDown .Dropdown-menu {
   background: rgba(26, 26, 26, 0.6);
-  border: none;
-  backdrop-filter: blur(40px);
-  position: absolute !important;
-  top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  top: 45px;
+  border-radius: 10px;
+  border: none !important;
+  color: #fff;
+  padding: 10px;
+  transition: all 0.5s ease-out;
+  z-index: 100;
+  position: absolute;
+  /* top: 0 !important; */
   max-height: fit-content !important;
 }
 

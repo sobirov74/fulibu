@@ -5,7 +5,6 @@ import tg from "../../assets/images/Instagram.svg";
 import facebook from "../../assets/images/Facebook.svg";
 import innovateIcon from "../../assets/images/InnovateIcon.svg";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   return (
     <footer className={styles.footer}>
