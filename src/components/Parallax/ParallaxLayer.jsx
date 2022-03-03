@@ -6,7 +6,7 @@ const ParallaxLayer = () => {
     <div className="wrap-overlay">
       <ParallaxComponent type="rotated" />
       <ParallaxComponent type="down" />
-      {/* <ParallaxComponent type="rotated" /> */}
+      <ParallaxComponent type="rotated" />
     </div>
   );
 };

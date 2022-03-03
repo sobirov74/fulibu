@@ -45,7 +45,7 @@ export const MainXitsCard = () => {
             className={styles.main__xits_wrap}
             key={xit.id}
           >
-            <div className={styles.main__xits_slide}>
+            <Link to={`/CommodityCard/${xit.id}`} className={styles.main__xits_slide}>
               <div className={styles.main__xitsImgBox}>
                 <img
                   src={xit.img}
@@ -87,7 +87,7 @@ export const MainXitsCard = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         })}
       </Swiper>

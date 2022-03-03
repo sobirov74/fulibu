@@ -36,7 +36,7 @@ const MainRecomendations = () => {
           {recomendationsList.map((book) => {
             if(book.category === 'recomendation')
             return <SwiperSlide className={styles.main_recomend_wrap} key={book.id}>
-              <div className={styles.main_recomend_card}>
+              <Link to={`/CommodityCard/${book.id}`} className={styles.main_recomend_card}>
                 <h4 className={styles.main_recomend_cardAuthor}>
                   {book.author}
                 </h4>
@@ -74,7 +74,7 @@ const MainRecomendations = () => {
                   </Link>
 
                 </div>
-              </div>
+              </Link>
             </SwiperSlide>
           })}
 

@@ -235,6 +235,24 @@ input::-webkit-inner-spin-button {
   margin-top: 180px;
 }
 
+.selected {
+  background: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex ;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.selected a {
+  color: #444444 !important;
+}
+
+.next{
+  margin-right: 0 !important;
+}
+
 @media (max-width: 480px) {
   .swiper-pagination-bullet {
     margin-right: 15px !important;

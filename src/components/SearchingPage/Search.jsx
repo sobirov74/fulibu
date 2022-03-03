@@ -1,16 +1,12 @@
-import React, { useState } from "react";
-import MainTop from "../MainTop/MainTop";
+import React, { useState, useEffect } from "react";
 import styles from "./search.module.scss";
 import logoGif from "../../assets/images/logoGif.gif";
 import searchIcon from "../../assets/images/searchIcon.svg";
 import ChooseDropDown from "./ChooseDropDown";
-import { FaStar } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import toRight from "../../assets/images/toRight.svg";
-import cardStyles from "../MainRegister/mainregister.module.scss";
 
 import { books } from "../../LibraryOfBooks/Books";
-import Footer from './../Footer/Footer';
+import Footer from "./../Footer/Footer";
+import PaginateItems from "./PaginateItems";
 
 const Search = () => {
   const years = ["all"];
@@ -21,7 +17,6 @@ const Search = () => {
   }
 
   const cards = books;
-  
 
   return (
     <>
@@ -34,9 +29,6 @@ const Search = () => {
           </div>
 
           <div className={styles.searchBox}>
-
-
-
             <div className={styles.searchInputBox}>
               <input
                 type="text"
@@ -49,9 +41,6 @@ const Search = () => {
               </button>
             </div>
 
-
-
-            
             <div className={styles.searchDropDowns}>
               <ChooseDropDown
                 className={styles.searchDropDown}
@@ -78,66 +67,12 @@ const Search = () => {
 
           <h2 className={styles.cardsTitle}>Результаты</h2>
 
-          <div className={styles.dropCards}>
-            {cards.map((book) => {
-              return (
-                <div className={styles.dropCard} key={book.id}>
-                  <div className={cardStyles.main_recomend_card}>
-                    <h4 className={cardStyles.main_recomend_cardAuthor}>
-                      {book.author}
-                    </h4>
 
-                    <div className={cardStyles.main_recomend_cardImgBox}>
-                      <img src={book.img} alt="" />
-
-                      <div className={cardStyles.main_recomend_cardBtns}>
-                        <Link
-                          to="/"
-                          className={cardStyles.main_recomend_cardLink1}
-                        >
-                          Текст
-                        </Link>
-                        <Link
-                          to="/"
-                          className={cardStyles.main_recomend_cardLink2}
-                        >
-                          Аудио
-                        </Link>
-                      </div>
-                    </div>
-                    <h4 className={cardStyles.main_recomend_cardTitle}>
-                      {book.title}
-                    </h4>
-
-                    <div className={cardStyles.main_recomend_cardStars}>
-                      <FaStar className={cardStyles.main_recomend_cardStar} />
-                      <FaStar className={cardStyles.main_recomend_cardStar} />
-                      <FaStar className={cardStyles.main_recomend_cardStar} />
-                      <FaStar className={cardStyles.main_recomend_cardStar} />
-                      <FaStar className={cardStyles.main_recomend_cardStar} />
-                    </div>
-
-                    <div className={cardStyles.main_recomend_cardPriceBox}>
-                      <p className={cardStyles.main_recomend_cardPrice}>
-                        {book.price}
-                      </p>
-
-                      <Link
-                        to={`/CommodityCard/${book.id}`}
-                        className={cardStyles.main_recomend_cardPriceLink}
-                      >
-                        <img src={toRight} alt="" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <PaginateItems books={cards} itemsPerPage={8}/>
         </div>
       </main>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };
