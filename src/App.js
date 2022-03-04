@@ -1,7 +1,6 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import ParallaxLayer from "./components/Parallax/ParallaxLayer";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import MainPage from "./components/MainPage";
@@ -9,19 +8,21 @@ import LoginPage from "./components/Header/LoginPage/LoginPage";
 import CommCard from "./components/CommodityCard/CommCard";
 import Search from "./components/SearchingPage/Search";
 
-const App = () => (
-  <BrowserRouter>
-    <ParallaxLayer />
-    <Header />
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/LoginPage" element={<LoginPage />} />
-      <Route path="/CommodityCard/:id" element={<CommCard />} />
-      <Route path="/search" element={<Search />} />
-    </Routes>
+const App = () => {
+  return (
+    <BrowserRouter>
+      <ParallaxLayer />
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
+        <Route path="/CommodityCard/:id" element={<CommCard />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
 
-    {/* <Footer /> */}
-  </BrowserRouter>
-);
+      {/* <Footer /> */}
+    </BrowserRouter>
+  );
+};
 
 export default App;

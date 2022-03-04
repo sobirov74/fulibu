@@ -15,11 +15,10 @@ import { books } from "../../LibraryOfBooks/Books";
 
 SwiperCore.use([Autoplay]);
 
-
 export const recomendationsList = books;
 
-
-const MainRecomendations = () => {
+const MainRecomendations = ({ recommend = [] }) => {
+  if (!recommend.length) return null;
   return (
     <>
       <div className={styles.main_recomend_cards}>
@@ -33,49 +32,56 @@ const MainRecomendations = () => {
             disableOnInteraction: false,
           }}
         >
-          {recomendationsList.map((book) => {
-            if(book.category === 'recomendation')
-            return <SwiperSlide className={styles.main_recomend_wrap} key={book.id}>
-              <Link to={`/CommodityCard/${book.id}`} className={styles.main_recomend_card}>
-                <h4 className={styles.main_recomend_cardAuthor}>
-                  {book.author}
-                </h4>
+          {recommend?.map((book) => {
+            return (
+              <SwiperSlide className={styles.main_recomend_wrap} key={book.id}>
+                <Link
+                  to={`/CommodityCard/${book.id}`}
+                  className={styles.main_recomend_card}
+                >
+                  <h4 className={styles.main_recomend_cardAuthor}>
+                    {book.author.name}
+                  </h4>
 
-                <div className={styles.main_recomend_cardImgBox}>
-                  <img src={book.img} alt="" />
+                  <div className={styles.main_recomend_cardImgBox}>
+                    <img src={book.image[0]} alt="" />
 
-                  <div className={styles.main_recomend_cardBtns}>
-                    <Link to="/" className={styles.main_recomend_cardLink1}>
-                      Текст
-                    </Link>
-                    <Link to="/" className={styles.main_recomend_cardLink2}>
-                      Аудио
-                    </Link>
+                    <div className={styles.main_recomend_cardBtns}>
+                      <div to="/" className={styles.main_recomend_cardLink1}>
+                        Текст
+                      </div>
+                      <div to="/" className={styles.main_recomend_cardLink2}>
+                        Аудио
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <h4 className={styles.main_recomend_cardTitle}>{book.title}</h4>
+                  <h4 className={styles.main_recomend_cardTitle}>
+                    {book.name}
+                  </h4>
 
-                <div className={styles.main_recomend_cardStars}>
-                  <FaStar className={styles.main_recomend_cardStar} />
-                  <FaStar className={styles.main_recomend_cardStar} />
-                  <FaStar className={styles.main_recomend_cardStar} />
-                  <FaStar className={styles.main_recomend_cardStar} />
-                  <FaStar className={styles.main_recomend_cardStar} />
-                </div>
+                  <div className={styles.main_recomend_cardStars}>
+                    <FaStar className={styles.main_recomend_cardStar} />
+                    <FaStar className={styles.main_recomend_cardStar} />
+                    <FaStar className={styles.main_recomend_cardStar} />
+                    <FaStar className={styles.main_recomend_cardStar} />
+                    <FaStar className={styles.main_recomend_cardStar} />
+                  </div>
 
-                <div className={styles.main_recomend_cardPriceBox}>
-                  <p className={styles.main_recomend_cardPrice}>{book.price}</p>
+                  <div className={styles.main_recomend_cardPriceBox}>
+                    <p className={styles.main_recomend_cardPrice}>
+                      {book.price}
+                    </p>
 
-                  <Link
-                    to={`/CommodityCard/${book.id}`}
-                    className={styles.main_recomend_cardPriceLink}
-                  >
-                    <img src={toRight} alt="" />
-                  </Link>
-
-                </div>
-              </Link>
-            </SwiperSlide>
+                    <div
+                      to={`/CommodityCard/${book.id}`}
+                      className={styles.main_recomend_cardPriceLink}
+                    >
+                      <img src={toRight} alt="" />
+                    </div>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            );
           })}
 
           <div className={styles.overlay}></div>

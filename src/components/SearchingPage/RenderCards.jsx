@@ -11,7 +11,7 @@ const Cards = ({cards})=>{
             {cards && cards.map((book) => {
               return (
                 <div className={styles.dropCard} key={book.id}>
-                  <div className={cardStyles.main_recomend_card}>
+                  <Link to={`/CommodityCard/${book.id}`} className={cardStyles.main_recomend_card}>
                     <h4 className={cardStyles.main_recomend_cardAuthor}>
                       {book.author}
                     </h4>
@@ -58,7 +58,7 @@ const Cards = ({cards})=>{
                         <img src={toRight} alt="" />
                       </Link>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               );
             })}

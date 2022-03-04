@@ -5,7 +5,7 @@ import MainRecomendations from "./MainRecomendations";
 import styles from "./mainregister.module.scss";
 import { Link } from "react-router-dom";
 
-const MainRegister = () => {
+const MainRegister = ({ recommend = [] }) => {
   return (
     <>
       <div className={styles.main__registration}>
@@ -18,7 +18,7 @@ const MainRegister = () => {
           <div className={styles.main_recomend}>
             <h3 className={styles.main_recomend_title}>рекомендации</h3>
 
-            <MainRecomendations />
+            <MainRecomendations recommend={recommend} />
 
             <Link to="/" className={styles.findMore_link}>
               Найти больше книг

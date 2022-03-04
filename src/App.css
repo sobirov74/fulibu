@@ -74,7 +74,7 @@ input::-webkit-inner-spin-button {
   width: 37px;
   height: 37px;
   border: none;
-  font-family: var(--montBold);
+  font-family: var(--montReg);
   box-sizing: border-box;
   color: #ffffff;
   position: relative;
@@ -100,7 +100,7 @@ input::-webkit-inner-spin-button {
 }
 
 .header__nav_select .Dropdown-placeholder {
-  font-family: var(--montBold);
+  font-family: var(--montReg);
   color: #ffffff;
 }
 
@@ -134,7 +134,7 @@ input::-webkit-inner-spin-button {
   background: transparent !important;
 
   color: #ffffff !important;
-  font-family: var(--montBold);
+  font-family: var(--montReg);
   line-height: 22px;
   cursor: pointer;
   z-index: 100;
@@ -147,7 +147,7 @@ input::-webkit-inner-spin-button {
 
 .search-dropDown .Dropdown-placeholder {
   color: #ffffff !important;
-  font-family: var(--montBold);
+  font-family: var(--montReg);
   font-size: 14px;
   line-height: 22px;
 }
@@ -180,7 +180,7 @@ input::-webkit-inner-spin-button {
 .search-dropDown .Dropdown-option {
   background: transparent !important;
   color: #ffffff !important;
-  font-family: var(--montBold);
+  font-family: var(--montReg);
 }
 .search-dropDown .Dropdown-option .is-selected {
   background: transparent !important;
@@ -196,7 +196,7 @@ input::-webkit-inner-spin-button {
 .Dropdown-placeholder {
   font-size: 12px;
   line-height: 18px;
-  font-family: var(--montBold);
+  font-family: var(--montReg);
 }
 
 @media (max-width: 1200px) {
@@ -240,7 +240,7 @@ input::-webkit-inner-spin-button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  display: flex ;
+  display: flex;
   align-items: center !important;
   justify-content: center !important;
 }
@@ -249,7 +249,7 @@ input::-webkit-inner-spin-button {
   color: #444444 !important;
 }
 
-.next{
+.next {
   margin-right: 0 !important;
 }
 

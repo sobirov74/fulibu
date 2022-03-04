@@ -30,7 +30,7 @@
       padding: 14px 0;
       font-size: 14px;
       line-height: 22px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       margin-top: 20px;
 
@@ -49,7 +49,7 @@
     &Title {
       font-size: 48px;
       line-height: 64px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
     }
 
@@ -86,7 +86,7 @@
     &Type {
       font-size: 14px;
       line-height: 22px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       margin-right: 10px;
     }
@@ -123,7 +123,7 @@
       padding: 15px 0;
       font-size: 14px;
       line-height: 22px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       align-items: center;
 
@@ -153,7 +153,7 @@
       margin-left: 10px;
       font-size: 12px;
       line-height: 18px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
     }
 
@@ -176,7 +176,7 @@
       width: 56px;
       font-size: 12px;
       line-height: 18px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       margin-left: 5px;
     }
@@ -201,7 +201,7 @@
     &Title {
       font-size: 24px;
       line-height: 36px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       margin-bottom: 20px;
     }
@@ -210,15 +210,14 @@
   &SlideTitle {
     font-size: 24px;
     line-height: 36px;
-    font-family: var(--montBold);
+    font-family: var(--montReg);
     color: #ffffff;
     text-transform: capitalize;
   }
 }
 
-
-.active{
-  background-color: #FE8D00;
+.active {
+  background-color: #fe8d00;
 }
 
 // ============  Media Start  ========================

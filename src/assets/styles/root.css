@@ -30,7 +30,7 @@ body {
 
 :root {
   --montReg: "Montserrat-Regular";
-  --montBold: "Montserrat-Bold";
+  --montReg: "Montserrat-Bold";
   --montExtraBold: "Montserrat-ExtraBold";
   --montMedium: "Montserrat-Medium";
   --montSemiBold: "Montserrat-SemiBold";

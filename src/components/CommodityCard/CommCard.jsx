@@ -2,17 +2,15 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { MainXitsCard, xits } from "../MainNews/MainXitsCard";
-import MainRecomendations, {
-  recomendationsList,
-} from "../MainRegister/MainRecomendations";
+import MainRecomendations from "../MainRegister/MainRecomendations";
 import CommTop from "./CommTop";
 import styles from "./commtop.module.scss";
 
 const CommCard = () => {
   const { id } = useParams();
-  const values = (recomendationsList, xits);
+  const values = xits;
   const book = values.find((book) => book.id === id);
-  
+
   return (
     <>
       <main>
@@ -26,8 +24,6 @@ const CommCard = () => {
       </main>
 
       <Footer />
-
-    
     </>
   );
 };

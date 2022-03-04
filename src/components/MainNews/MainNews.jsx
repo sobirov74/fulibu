@@ -5,7 +5,6 @@ import { MainXitsCard } from "./MainXitsCard";
 import { Link } from "react-router-dom";
 
 const MainNews = () => {
-
   return (
     <>
       <div className={styles.main__xits}>
@@ -13,7 +12,7 @@ const MainNews = () => {
           <h3 className={styles.main__xits_title}>Хиты продаж</h3>
         </div>
 
-        <MainXitsCard />
+        {/* <MainXitsCard /> */}
       </div>
 
       <div className={styles.mainNews}>

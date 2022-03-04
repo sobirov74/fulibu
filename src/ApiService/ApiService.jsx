@@ -1,0 +1,25 @@
+class ApiService {
+  static _host = "https://admin.fulibu.uz";
+  static _apiBase = this._host + "/api";
+  static _headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+
+  static getResources = async (url, token = null) => {
+    let headers = this._headers;
+
+    if (token) {
+      headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      };
+    }
+
+    const res = await fetch(ApiService._apiBase + url, { headers });
+    return await res.json();
+  };
+}
+
+export default ApiService;

@@ -8,7 +8,6 @@
   z-index: 100;
   position: relative;
 
-
   &Top {
     display: flex;
   }
@@ -33,7 +32,7 @@
       line-height: 100%;
       text-transform: uppercase;
       color: #ffffff;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       margin-bottom: 30px;
     }
 
@@ -102,10 +101,6 @@
   }
 }
 
-
-
-
-
 @media (max-width: 1200px) {
   .footer {
     &Top {
@@ -137,7 +132,7 @@
       margin-right: 0;
       align-items: center;
 
-      &Link{
+      &Link {
         text-align: center;
         line-height: 20px;
       }
@@ -151,9 +146,6 @@
       display: none;
     }
   }
-
-
-
 }
 
 @media (max-width: 480px) {

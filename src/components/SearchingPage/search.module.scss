@@ -54,7 +54,7 @@
 
   &Btn {
     background: #747ca5;
-    font-family: var(--montBold);
+    font-family: var(--montReg);
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     font-size: 14px;
@@ -84,7 +84,7 @@
   font-size: 24px;
   line-height: 36px;
   color: #ffffff;
-  font-family: var(--montBold);
+  font-family: var(--montReg);
 }
 
 .drop {
@@ -102,7 +102,7 @@
   &Label {
     font-size: 10px;
     line-height: 14px;
-    font-family: var(--montBold);
+    font-family: var(--montReg);
     color: #999999;
     margin-bottom: 5px;
   }
@@ -126,18 +126,15 @@
 
   a {
     color: #ffffff;
-    font-family: var(--montBold);
+    font-family: var(--montReg);
     font-size: 14px;
     line-height: 22px;
     cursor: pointer;
   }
 
-  li{
-
+  li {
     margin-right: 20px;
   }
-
-  
 }
 
 //==============MEDIA START===========================

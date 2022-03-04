@@ -94,7 +94,7 @@
   &_title {
     font-size: 24px;
     line-height: 36px;
-    font-family: var(--montBold);
+    font-family: var(--montReg);
     color: #ffffff;
     text-transform: capitalize;
   }
@@ -125,7 +125,7 @@
     &Author {
       font-size: 12px;
       line-height: 18px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       margin-bottom: 10px;
     }
@@ -160,7 +160,7 @@
       width: 36px;
       font-size: 8px;
       line-height: 12px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
     }
 
@@ -173,7 +173,7 @@
       font-size: 12px;
       line-height: 18px;
       text-align: center;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #ffffff;
       margin-bottom: 6.5px;
     }
@@ -193,7 +193,7 @@
     &Price {
       font-size: 10px;
       line-height: 14px;
-      font-family: var(--montBold);
+      font-family: var(--montReg);
       color: #747ca5;
 
       &Box {
@@ -226,7 +226,6 @@
 
 @media (max-width: 1200px) {
   .main {
-
     &__reg {
       &_swiperSlide {
         flex-direction: column;
@@ -270,7 +269,7 @@
       height: 310px;
       bottom: -21%;
     }
-}
+  }
 }
 
 @media (max-width: 760px) {
@@ -317,7 +316,6 @@
       width: 240px;
     }
   }
-
 }
 
 .overlay {
@@ -333,4 +331,3 @@
   height: 100%;
   z-index: 110;
 }
-

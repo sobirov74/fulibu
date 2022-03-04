@@ -67,8 +67,7 @@ const Search = () => {
 
           <h2 className={styles.cardsTitle}>Результаты</h2>
 
-
-          <PaginateItems books={cards} itemsPerPage={8}/>
+          {/* <PaginateItems books={cards} itemsPerPage={8}/> */}
         </div>
       </main>
 

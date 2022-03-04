@@ -34,7 +34,7 @@ export const ParallaxComponent = ({ type }) => {
       <div className={`parallax-wrapper ${type}`}>
         <div ref={scene1} className={styles.circles} data-relative-input="true">
           <img
-            data-depth="1.2"
+            data-depth="0.7"
             src={circleB}
             alt=""
             className={styles.circleBig}
