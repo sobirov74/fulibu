@@ -6,9 +6,9 @@ import MainRecomendations from "../MainRegister/MainRecomendations";
 import CommTop from "./CommTop";
 import styles from "./commtop.module.scss";
 
-const CommCard = () => {
+const CommCard = ({ data }) => {
   const { id } = useParams();
-  const values = xits;
+  const values = data;
   const book = values.find((book) => book.id === id);
 
   return (

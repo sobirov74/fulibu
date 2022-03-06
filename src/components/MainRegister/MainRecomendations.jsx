@@ -11,11 +11,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
-import { books } from "../../LibraryOfBooks/Books";
 
 SwiperCore.use([Autoplay]);
-
-export const recomendationsList = books;
 
 const MainRecomendations = ({ recommend = [] }) => {
   if (!recommend.length) return null;

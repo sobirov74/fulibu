@@ -14,17 +14,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
-import { books } from "../../LibraryOfBooks/Books";
 
 SwiperCore.use([Autoplay]);
 
-export const xits = books;
 
-const handlePage = (title) => {
-  console.log(title);
-};
-
-export const MainXitsCard = () => {
+export const MainXitsCard = ({ data = [] }) => {
+  if (!data.length) return null
   return (
     <div className={styles.main__xits_slides}>
       <Swiper
@@ -38,34 +33,32 @@ export const MainXitsCard = () => {
         }}
       >
         ...
-        {xits.map((xit) => {
-          if(xit.category === 'xits')
+        {data?.map((xit) => {
           return <SwiperSlide
-            onClick={() => handlePage(xit.title)}
             className={styles.main__xits_wrap}
             key={xit.id}
           >
             <Link to={`/CommodityCard/${xit.id}`} className={styles.main__xits_slide}>
               <div className={styles.main__xitsImgBox}>
                 <img
-                  src={xit.img}
+                  src={xit.image[0]}
                   className={styles.main__xits_slideImg}
                   alt=""
                 />
                 <div>
-                  <Link to="/" className={styles.main__xitsImgLink1}>
+                  <div to="/" className={styles.main__xitsImgLink1}>
                     Текст
-                  </Link>
-                  <Link to="/" className={styles.main__xitsImgLink2}>
+                  </div>
+                  <div to="/" className={styles.main__xitsImgLink2}>
                     Аудио
-                  </Link>
+                  </div>
                 </div>
               </div>
 
               <div className={styles.main__xits_content}>
-                <h4 className={styles.main__xits_contentTitle}>{xit.title}</h4>
+                <h4 className={styles.main__xits_contentTitle}>{xit.name}</h4>
                 <span className={styles.main__xits_contentAuthor}>
-                  {xit.author}
+                  {xit.author.name}
                 </span>
 
                 <div className={styles.main__xits_contentStars}>
@@ -82,9 +75,9 @@ export const MainXitsCard = () => {
 
                 <div className={styles.main__xits_contentPriceBox}>
                   <p className={styles.main__xits_contentPrice}>{xit.price}</p>
-                  <Link to={`/CommodityCard/${xit.id}`} className={styles.main__xits_contentPriceLink}>
+                  <div className={styles.main__xits_contentPriceLink}>
                     <img src={toRight} alt="" />
-                  </Link>
+                  </div>
                 </div>
               </div>
             </Link>
