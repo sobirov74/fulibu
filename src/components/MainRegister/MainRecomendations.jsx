@@ -14,8 +14,8 @@ import { Link } from "react-router-dom";
 
 SwiperCore.use([Autoplay]);
 
-const MainRecomendations = ({ recommend = [] }) => {
-  if (!recommend.length) return null;
+const MainRecomendations = ({ data = [] }) => {
+  if (!data.length) return null;
   return (
     <>
       <div className={styles.main_recomend_cards}>
@@ -29,7 +29,7 @@ const MainRecomendations = ({ recommend = [] }) => {
             disableOnInteraction: false,
           }}
         >
-          {recommend?.map((book) => {
+          {data?.map((book) => {
             return (
               <SwiperSlide className={styles.main_recomend_wrap} key={book.id}>
                 <Link

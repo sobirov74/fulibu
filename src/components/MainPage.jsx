@@ -1,47 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Footer from "./Footer/Footer";
-import LoginPage from "./Header/LoginPage/LoginPage";
 import MainNews from "./MainNews/MainNews";
 import MainRegister from "./MainRegister/MainRegister";
 import MainTop from "./MainTop/MainTop";
-import ApiService from "../ApiService/ApiService";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { fetchPosts } from "../redux/actions/postActions";
+import Loading from "./Loading/Loading";
+import { FetchReload } from "../redux/postReducer";
 
-let initialState = {
-  xits: [],
-  recommend: []
-}
- export const MainPage = () => {
-  const [recommend, setRecommend] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [xits, setXits] = useState([])
-  const [newest, setNewest]  = useState([])
-
+export const MainPage = () => {
+  const { loading, error } = useSelector((state) => state.posts);
+  const dispatch = useDispatch();
+  const fetchData = () => dispatch(fetchPosts());
   useEffect(() => {
-    ApiService.getResources("/main")
-      .then((res) => {
-        console.log(res);
-        setRecommend(res.recommend);
-        setXits(res.hot)
-        setNewest(res.newest)
-      })
-      .finally(() => setLoading(false));
+    fetchData();
   }, []);
 
+  if (loading || error) {
+    return <Loading loading={loading} error={error} reload={fetchData} />;
+    // return <div>loading...</div>;
+  }
 
-  
-initialState = {
-  xits: xits,
-  recommend: recommend,
-}
-
-  // console.log(recommend);
-  if (loading) return <div>loading...</div>;
   return (
     <>
       <main>
         <MainTop />
-        <MainRegister recommend={recommend} />
-        <MainNews data={xits} newest={newest} />
+        <MainRegister />
+        <MainNews />
       </main>
 
       <Footer />
@@ -49,5 +35,4 @@ initialState = {
   );
 };
 
-// export default MainPage;
-export default initialState
+export default MainPage;

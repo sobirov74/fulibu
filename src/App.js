@@ -1,27 +1,31 @@
 import "./App.css";
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./components/Header/Header";
 import ParallaxLayer from "./components/Parallax/ParallaxLayer";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import {MainPage} from "./components/MainPage";
+import { MainPage } from "./components/MainPage";
 import LoginPage from "./components/Header/LoginPage/LoginPage";
 import CommCard from "./components/CommodityCard/CommCard";
 import Search from "./components/SearchingPage/Search";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ParallaxLayer />
-      <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/LoginPage" element={<LoginPage />} />
-        {/* <Route path="/CommodityCard/:id" element={<CommCard />} />. */}
-        <Route path="/search" element={<Search />} />
-      </Routes>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ParallaxLayer />
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
+          <Route path="/CommodityCard/:id" element={<CommCard />} />.
+          <Route path="/search" element={<Search />} />
+        </Routes>
 
-      {/* <Footer /> */}
-    </BrowserRouter>
+        {/* <Footer /> */}
+      </BrowserRouter>
+    </Provider>
   );
 };
 

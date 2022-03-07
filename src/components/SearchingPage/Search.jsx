@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./search.module.scss";
 import logoGif from "../../assets/images/logoGif.gif";
 import searchIcon from "../../assets/images/searchIcon.svg";
 import ChooseDropDown from "./ChooseDropDown";
 
-import { books } from "../../LibraryOfBooks/Books";
+// import { books } from "../../LibraryOfBooks/Books";
 import Footer from "./../Footer/Footer";
 import PaginateItems from "./PaginateItems";
+import { useDispatch, useSelector } from "react-redux";
+import { postSelector } from "../../redux/postReducer";
+import { fetchPosts } from "../../redux/actions/postActions";
+import Loading from "../Loading/Loading";
 
 const Search = () => {
   const years = ["all"];
@@ -16,7 +20,20 @@ const Search = () => {
     years.push(i);
   }
 
-  const cards = books;
+  const { loading, error } = useSelector((state) => state.posts);
+  const dispatch = useDispatch();
+  const fetchData = () => dispatch(fetchPosts());
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const { recommend = [] } = useSelector(postSelector);
+  console.log(recommend);
+
+  if (loading || error) {
+    return <Loading loading={loading} error={error} reload={fetchData} />;
+    // return <div>loading...</div>;
+  }
 
   return (
     <>
@@ -67,7 +84,7 @@ const Search = () => {
 
           <h2 className={styles.cardsTitle}>Результаты</h2>
 
-          {/* <PaginateItems books={cards} itemsPerPage={8}/> */}
+          <PaginateItems books={recommend} itemsPerPage={8} />
         </div>
       </main>
 

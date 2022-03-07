@@ -3,9 +3,12 @@ import MainRecomendations from "../MainRegister/MainRecomendations";
 import toRight from "../../assets/images/toRight.svg";
 import { MainXitsCard } from "./MainXitsCard";
 import { Link } from "react-router-dom";
-import { connect } from 'react-redux'
+import { useSelector } from "react-redux";
+import { postSelector } from "../../redux/postReducer";
 
-const MainNews = ({ data = [], newest = [] }) => {
+const MainNews = () => {
+  const { xits = [] } = useSelector(postSelector);
+  const { newest = [] } = useSelector(postSelector);
   return (
     <>
       <div className={styles.main__xits}>
@@ -13,14 +16,14 @@ const MainNews = ({ data = [], newest = [] }) => {
           <h3 className={styles.main__xits_title}>Хиты продаж</h3>
         </div>
 
-        <MainXitsCard data={data} />
+        <MainXitsCard data={xits} />
       </div>
 
       <div className={styles.mainNews}>
         <div className="container">
           <h3 className={styles.mainTitle}>новинки</h3>
 
-          <MainRecomendations recommend={newest} />
+          <MainRecomendations data={newest} />
 
           <Link to="/" className={styles.findMore_link}>
             Найти больше книг
@@ -32,9 +35,4 @@ const MainNews = ({ data = [], newest = [] }) => {
   );
 };
 
-const MapStateToProps = state => {
-  console.log(state);
-  return state
-}
-
-export default connect(MapStateToProps, null)(MainNews);
+export default MainNews;

@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./maintop.module.scss";
 import toRight from "../../assets/images/toRight.svg";
-import mainTopImg from "../../assets/images/mainTop.png";
 import MainTopSlide from "./MainTopSlide";
 import { Link } from "react-router-dom";
 

@@ -1,47 +1,48 @@
 import React from "react";
 import styles from "./commtop.module.scss";
 import pricetag from "../../assets/images/Commodities/pricetag.svg";
-import saveIcon from "../../assets/images/Commodities/save.svg";
-import book from "../../assets/images/Commodities/book.svg";
 import { FaBookmark, FaRegBookmark, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
-
+import book from "../../assets/images/Commodities/book.svg";
+// import { useParams } from "react-router";
+// import { useSelector } from "react-redux";
+// import { postSelector } from "../../redux/postReducer";
 
 const CommTop = ({ data }) => {
-
-  const Description = () => {
-    if (!data.description) {
-      return <p className={styles.commDescr}>Современное общество пропагандирует культ успеха: будь умнее, богаче, продуктивнее – будь лучше всех. Соцсети изобилуют историями на тему, как какой-то малец придумал приложение и заработал кучу денег, статьями в духе «Тысяча и один способ быть счастливым», а фото во френдленте создают впечатление, что окружающие живут лучше и интереснее, чем мы.Однако наша зацикленность на позитиве и успехе лишь напоминает о том, чего мы не достигли, о мечтах, которые не сбылись. Как же стать по-настоящему счастливым? Популярный блогер Марк Мэнсон в книге «Тонкое искусство пофигизма» предлагает свой, оригинальный подход к этому вопросу. Его жизненная философия проста – необходимо научиться искусству пофигизма. Определив то, до чего вам действительно есть дело, нужно уметь наплевать на все второстепен ное, забить на трудности, послать к черту чужое мнение и быть готовым взглянуть в лицо неудачам и показатьим средний палец.</p>
-    } else {
-      return <p className={styles.commDescr}>{data.description}</p>
-    }
-  }
-
-
-  const [save, setSave] = useState(false)
+  const [save, setSave] = useState(false);
+  console.log(data);
 
   const handleSave = () => {
-    setSave(!save)
-  }
+    setSave(!save);
+  };
 
- const ChangeSaveBtn = ()=> {
-   if(!save){
-     return <Link to="" className={`${styles.commRightBtn} ${styles.active}`} onClick={handleSave}>
-     <FaRegBookmark className={styles.commRightBtnIcon} /> Добавить в библиотеку
-   </Link>
-   }else  {
-    return <Link to="" className={`${styles.commRightBtn}`} onClick={handleSave}>
-    <FaBookmark className={styles.commRightBtnIcon} /> В библиотеке
-  </Link>
-   }
- }
+  const ChangeSaveBtn = () => {
+    if (!save) {
+      return (
+        <Link
+          to=""
+          className={`${styles.commRightBtn} ${styles.active}`}
+          onClick={handleSave}
+        >
+          <FaRegBookmark className={styles.commRightBtnIcon} /> Добавить в
+          библиотеку
+        </Link>
+      );
+    } else {
+      return (
+        <Link to="" className={`${styles.commRightBtn}`} onClick={handleSave}>
+          <FaBookmark className={styles.commRightBtnIcon} /> В библиотеке
+        </Link>
+      );
+    }
+  };
+
   return (
     <div className="container">
       <div className="mt-5">
         <div className={styles.commRightTitleBox}>
-          <h3 className={styles.commRightTitle}>{data.title}</h3>
+          <h3 className={styles.commRightTitle}>{data.name}</h3>
           <p className={styles.commRightLabel}>
             Парадоксальный способ жить счастливо
           </p>
@@ -49,7 +50,7 @@ const CommTop = ({ data }) => {
         <div className={styles.comm}>
           <div className={styles.commLeft}>
             <div className={styles.commLeftBox}>
-              <img src={data.img} alt="" />
+              <img src={data.image} alt="" />
             </div>
 
             <Link to="/" className={styles.commLeftLink}>
@@ -59,7 +60,7 @@ const CommTop = ({ data }) => {
 
           <div className={styles.commRight}>
             <div className={styles.commRightTitleBox1}>
-              <h3 className={styles.commRightTitle}>{data.title}</h3>
+              <h3 className={styles.commRightTitle}>{data.name}</h3>
 
               <p className={styles.commRightLabel}>
                 Парадоксальный способ жить счастливо
@@ -127,9 +128,7 @@ const CommTop = ({ data }) => {
             </div>
 
             <div className={styles.commRightLinks}>
-              
-        <ChangeSaveBtn/>
-
+              <ChangeSaveBtn />
 
               <Link to="/" className={styles.commRightBtn}>
                 <img src={book} alt="" /> Купить{" "}
@@ -141,7 +140,7 @@ const CommTop = ({ data }) => {
 
       <h2 className={styles.commDescrTitle}>Описание книги</h2>
 
-      <Description />
+      <p className={styles.commDescr}>{data.description}</p>
     </div>
   );
 };
