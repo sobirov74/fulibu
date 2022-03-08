@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./search.module.scss";
 import ReactPaginate from "react-paginate";
 import Cards from "./RenderCards";
+import { rightArrow, leftArrow } from "./../arrows/Arrows";
 
 const PaginateItems = ({ books, itemsPerPage }) => {
   // We start with an empty list of items.
@@ -11,7 +12,7 @@ const PaginateItems = ({ books, itemsPerPage }) => {
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(books.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(books.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, books]);
@@ -31,11 +32,11 @@ const PaginateItems = ({ books, itemsPerPage }) => {
       <ReactPaginate
         className={styles.pagination}
         breakLabel="..."
-        nextLabel=">"
+        nextLabel={rightArrow}
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="<"
+        previousLabel={leftArrow}
         renderOnZeroPageCount={null}
       />
     </>

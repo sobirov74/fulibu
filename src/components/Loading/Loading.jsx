@@ -1,13 +1,11 @@
 import React from "react";
+import styles from "./loading.module.scss";
 
 const Loading = () => {
   return (
-    <div classNameName="loading">
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
+    <div className={styles.center}>
+      <div className={styles.ring}> </div>
+      <span>Loading...</span>
     </div>
   );
 };

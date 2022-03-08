@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { fetchPosts } from "../redux/actions/postActions";
 import Loading from "./Loading/Loading";
-import { FetchReload } from "../redux/postReducer";
 
 export const MainPage = () => {
   const { loading, error } = useSelector((state) => state.posts);
@@ -19,7 +18,6 @@ export const MainPage = () => {
 
   if (loading || error) {
     return <Loading loading={loading} error={error} reload={fetchData} />;
-    // return <div>loading...</div>;
   }
 
   return (

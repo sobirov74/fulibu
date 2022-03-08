@@ -8,7 +8,7 @@ input::-webkit-inner-spin-button {
   text-align: start !important;
 }
 
-.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
@@ -173,7 +173,6 @@ input::-webkit-inner-spin-button {
   transition: all 0.5s ease-out;
   z-index: 100;
   position: absolute;
-  /* top: 0 !important; */
   max-height: fit-content !important;
 }
 
@@ -182,6 +181,7 @@ input::-webkit-inner-spin-button {
   color: #ffffff !important;
   font-family: var(--montReg);
 }
+
 .search-dropDown .Dropdown-option .is-selected {
   background: transparent !important;
 }
@@ -219,7 +219,7 @@ input::-webkit-inner-spin-button {
     align-items: center !important;
   }
 
-  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-horizontal>.swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
