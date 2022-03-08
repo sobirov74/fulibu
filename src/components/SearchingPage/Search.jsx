@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./search.module.scss";
 import logoGif from "../../assets/images/logoGif.gif";
 import searchIcon from "../../assets/images/searchIcon.svg";
@@ -12,28 +12,40 @@ import { postSelector } from "../../redux/postReducer";
 import { fetchPosts } from "../../redux/actions/postActions";
 import Loading from "../Loading/Loading";
 
+const state = {
+  sortValue: "",
+  inputValue: "",
+};
+
+const years = ["all"];
+const currYear = new Date().getFullYear();
+
+for (let i = 2017; i <= currYear; i++) {
+  years.push(i);
+}
+
 const Search = () => {
-  const years = ["all"];
-  const currYear = new Date().getFullYear();
-
-  for (let i = 2017; i <= currYear; i++) {
-    years.push(i);
-  }
-
+  const [input, setInput] = useState("");
+  const [results, setResults] = useState([]);
   const { loading, error } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const fetchData = () => dispatch(fetchPosts());
-  useEffect(() => {
+  useEffect((prevProps, prevState) => {
     fetchData();
   }, []);
 
   const { recommend = [] } = useSelector(postSelector);
-  console.log(recommend);
 
   if (loading || error) {
     return <Loading loading={loading} error={error} reload={fetchData} />;
     // return <div>loading...</div>;
   }
+
+  const handleChange = (event) => {
+    const typed = event.target.value;
+
+    setInput(typed);
+  };
 
   return (
     <>
@@ -48,6 +60,7 @@ const Search = () => {
           <div className={styles.searchBox}>
             <div className={styles.searchInputBox}>
               <input
+                onChange={handleChange}
                 type="text"
                 className={styles.searchInput}
                 placeholder="Введите название книги"

@@ -25,7 +25,7 @@ const MainNews = () => {
 
           <MainRecomendations data={newest} />
 
-          <Link to="/" className={styles.findMore_link}>
+          <Link to="/search" className={styles.findMore_link}>
             Найти больше книг
             <img className={styles.findMore_linkImg} src={toRight} alt="" />
           </Link>

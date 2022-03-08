@@ -1,5 +1,4 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
 import toRight from "../../assets/images/toRight.svg";
 
 import styles from "./mainnews.module.scss";
@@ -14,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import Rating from "../Rating/Rating";
 
 SwiperCore.use([Autoplay]);
 
@@ -60,14 +60,7 @@ export const MainXitsCard = ({ data = [] }) => {
                   <span className={styles.main__xits_contentAuthor}>
                     {xit.author.name}
                   </span>
-
-                  <div className={styles.main__xits_contentStars}>
-                    <FaStar className={styles.main__xits_contentStar} />
-                    <FaStar className={styles.main__xits_contentStar} />
-                    <FaStar className={styles.main__xits_contentStar} />
-                    <FaStar className={styles.main__xits_contentStar} />
-                    <FaStar className={styles.main__xits_contentStar} />
-                  </div>
+                  <Rating data={xit.rating} />
 
                   <p className={styles.main__xits_contentDescr}>
                     {xit.description}
@@ -75,7 +68,7 @@ export const MainXitsCard = ({ data = [] }) => {
 
                   <div className={styles.main__xits_contentPriceBox}>
                     <p className={styles.main__xits_contentPrice}>
-                      {xit.price}
+                      {xit.price} USD
                     </p>
                     <div className={styles.main__xits_contentPriceLink}>
                       <img src={toRight} alt="" />

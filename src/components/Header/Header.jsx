@@ -6,12 +6,11 @@ import DropDown from "./DropDown";
 import "react-dropdown/style.css";
 import styles from "./header.module.scss";
 import clsx from "clsx";
-import LoginPage from "./LoginPage/LoginPage";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const handleActive = () => {
-  const login = document.querySelector();
-};
+// const handleActive = () => {
+//   const login = document.querySelector();
+// };
 
 const Header = () => {
   const [visible, setVisible] = useState(true);
@@ -58,7 +57,6 @@ const Header = () => {
           <img className={styles.header__nav_icon} src={user} alt="" />
         </Link>
       </div>
-
     </header>
   );
 };

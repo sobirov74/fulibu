@@ -1,8 +1,8 @@
 import styles from "./search.module.scss";
-import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toRight from "../../assets/images/toRight.svg";
 import cardStyles from "../MainRegister/mainregister.module.scss";
+import Rating from "../Rating/Rating";
 
 const Cards = ({ cards }) => {
   return (
@@ -10,11 +10,12 @@ const Cards = ({ cards }) => {
       {cards &&
         cards.map((book) => {
           return (
-            <div className={styles.dropCard} key={book.id}>
-              <Link
-                to={`/CommodityCard/${book.id}`}
-                className={cardStyles.main_recomend_card}
-              >
+            <Link
+              to={`/CommodityCard/${book.id}`}
+              className={styles.dropCard}
+              key={book.id}
+            >
+              <div className={cardStyles.main_recomend_card}>
                 <h4 className={cardStyles.main_recomend_cardAuthor}>
                   {book.author.name}
                 </h4>
@@ -35,17 +36,11 @@ const Cards = ({ cards }) => {
                   {book.name}
                 </h4>
 
-                <div className={cardStyles.main_recomend_cardStars}>
-                  <FaStar className={cardStyles.main_recomend_cardStar} />
-                  <FaStar className={cardStyles.main_recomend_cardStar} />
-                  <FaStar className={cardStyles.main_recomend_cardStar} />
-                  <FaStar className={cardStyles.main_recomend_cardStar} />
-                  <FaStar className={cardStyles.main_recomend_cardStar} />
-                </div>
+                <Rating data={book.rating} />
 
                 <div className={cardStyles.main_recomend_cardPriceBox}>
                   <p className={cardStyles.main_recomend_cardPrice}>
-                    {book.price}
+                    {book.price} USD
                   </p>
 
                   <div
@@ -55,8 +50,8 @@ const Cards = ({ cards }) => {
                     <img src={toRight} alt="" />
                   </div>
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
           );
         })}
     </div>

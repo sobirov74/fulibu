@@ -1,17 +1,18 @@
 import React from "react";
 import styles from "./commtop.module.scss";
 import pricetag from "../../assets/images/Commodities/pricetag.svg";
-import { FaBookmark, FaRegBookmark, FaStar } from "react-icons/fa";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import book from "../../assets/images/Commodities/book.svg";
+import Rating from "../Rating/Rating";
 // import { useParams } from "react-router";
 // import { useSelector } from "react-redux";
 // import { postSelector } from "../../redux/postReducer";
 
 const CommTop = ({ data }) => {
   const [save, setSave] = useState(false);
-  console.log(data);
+  // console.log(data);
 
   const handleSave = () => {
     setSave(!save);
@@ -37,7 +38,8 @@ const CommTop = ({ data }) => {
       );
     }
   };
-
+  // console.log(data);
+  // return null;
   return (
     <div className="container">
       <div className="mt-5">
@@ -50,11 +52,11 @@ const CommTop = ({ data }) => {
         <div className={styles.comm}>
           <div className={styles.commLeft}>
             <div className={styles.commLeftBox}>
-              <img src={data.image} alt="" />
+              <img src={data.image[0]} alt="" />
             </div>
 
             <Link to="/" className={styles.commLeftLink}>
-              <img src={pricetag} alt="" /> {data.price}
+              <img src={pricetag} alt="" /> {data.price} USD
             </Link>
           </div>
 
@@ -69,29 +71,25 @@ const CommTop = ({ data }) => {
             <div className={styles.commRightBox}>
               <div className={styles.commRightInfos}>
                 <h4 className={styles.commRightType}>Автор:</h4>
-                <p className={styles.commRightInfo}>{data.author}</p>
+                <p className={styles.commRightInfo}>{data.author.name}</p>
               </div>
 
               <div className={styles.commRightInfos}>
                 <h4 className={styles.commRightType}>Рейтинг:</h4>
                 <div className={styles.commRightStars}>
-                  <FaStar className={styles.commRightStar} />
-                  <FaStar className={styles.commRightStar} />
-                  <FaStar className={styles.commRightStar} />
-                  <FaStar className={styles.commRightStar} />
-                  <FaStar className={styles.commRightStar} />
-                  <h4 className={styles.commRightRate}>4,1</h4>
+                  <Rating data={data.rating} />
+                  <h4 className={styles.commRightRate}>{data.rating}</h4>
                 </div>
               </div>
 
               <div className={styles.commRightInfos}>
                 <h4 className={styles.commRightType}>Дата выхода:</h4>
-                <p className={styles.commRightInfo}>04 сентября 2017</p>
+                <p className={styles.commRightInfo}>{data.publish_date}</p>
               </div>
 
               <div className={styles.commRightInfos}>
                 <h4 className={styles.commRightType}>Объем:</h4>
-                <p className={styles.commRightInfo}>180 стр.</p>
+                <p className={styles.commRightInfo}>{data.size} стр.</p>
               </div>
 
               <div className={styles.commRightInfos}>

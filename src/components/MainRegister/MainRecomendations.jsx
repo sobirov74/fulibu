@@ -1,6 +1,5 @@
 import toRight from "../../assets/images/toRight.svg";
 import styles from "./mainregister.module.scss";
-import { FaStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import "swiper/scss";
@@ -11,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import Rating from "../Rating/Rating";
 
 SwiperCore.use([Autoplay]);
 
@@ -56,17 +56,11 @@ const MainRecomendations = ({ data = [] }) => {
                     {book.name}
                   </h4>
 
-                  <div className={styles.main_recomend_cardStars}>
-                    <FaStar className={styles.main_recomend_cardStar} />
-                    <FaStar className={styles.main_recomend_cardStar} />
-                    <FaStar className={styles.main_recomend_cardStar} />
-                    <FaStar className={styles.main_recomend_cardStar} />
-                    <FaStar className={styles.main_recomend_cardStar} />
-                  </div>
+                  <Rating data={book.rating} />
 
                   <div className={styles.main_recomend_cardPriceBox}>
                     <p className={styles.main_recomend_cardPrice}>
-                      {book.price}
+                      {book.price} USD
                     </p>
 
                     <div

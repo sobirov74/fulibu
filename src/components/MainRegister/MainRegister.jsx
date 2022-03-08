@@ -20,7 +20,7 @@ const MainRegister = () => {
 
             <MainRecomendations data={recommend} />
 
-            <Link to="/" className={styles.findMore_link}>
+            <Link to="/search" className={styles.findMore_link}>
               Найти больше книг
               <img src={toRight} alt="" />
             </Link>

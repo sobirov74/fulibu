@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../header.module.scss";
-import close from "../../../assets/images/close.svg";
-import LoginIcon1 from "../../../assets/images/LoginIcon1.svg";
+import styles from "./login.module.scss";
+import close from "../../assets/images/close.svg";
+import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
 import { Link } from "react-router-dom";
-import Input from './Input'
+import Input from "./Input";
 
 const LoginPage = () => {
   return (
@@ -19,7 +19,7 @@ const LoginPage = () => {
 
             <h2 className={styles.loginTitle}>ВХОД В АККАУНТ</h2>
 
-            <Input/>
+            <Input />
           </div>
         </div>
       </div>

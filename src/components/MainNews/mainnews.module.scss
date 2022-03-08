@@ -104,18 +104,6 @@
         overflow: hidden;
       }
 
-      &Stars {
-        display: flex;
-        gap: 1px;
-        width: 100%;
-        margin-top: 11.5px;
-      }
-
-      &Star {
-        color: #fe8d00;
-        font-size: 12px;
-      }
-
       &Price {
         font-size: 10px;
         line-height: 12px;
@@ -215,10 +203,6 @@
 
       &Price {
         margin-right: 45px;
-      }
-
-      &Stars {
-        margin-top: 0;
       }
     }
   }

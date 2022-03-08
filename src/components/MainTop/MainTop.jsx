@@ -16,7 +16,7 @@ const MainTop = () => {
             <h1 className={styles.mainTop__content_title}>
               КНИГИ КОТОРЫЕ ТЫ ЕЩЕ НЕ ЧИТАЛ
             </h1>
-            <Link to="/" className={styles.mainTop__content_link}>
+            <Link to="/search" className={styles.mainTop__content_link}>
               Найти больше книг
               <img src={toRight} alt="" />
             </Link>
