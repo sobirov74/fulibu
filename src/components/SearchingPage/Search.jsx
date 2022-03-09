@@ -4,18 +4,12 @@ import logoGif from "../../assets/images/logoGif.gif";
 import searchIcon from "../../assets/images/searchIcon.svg";
 import ChooseDropDown from "./ChooseDropDown";
 
-// import { books } from "../../LibraryOfBooks/Books";
 import Footer from "./../Footer/Footer";
 import PaginateItems from "./PaginateItems";
 import { useDispatch, useSelector } from "react-redux";
-import { postSelector } from "../../redux/postReducer";
 import { fetchPosts } from "../../redux/actions/postActions";
 import Loading from "../Loading/Loading";
-
-const state = {
-  sortValue: "",
-  inputValue: "",
-};
+import ApiService from "../../ApiService";
 
 const years = ["all"];
 const currYear = new Date().getFullYear();
@@ -24,33 +18,72 @@ for (let i = 2017; i <= currYear; i++) {
   years.push(i);
 }
 
+const useInputValue = () => {
+  const [value, setValue] = useState("");
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+  return { value, onChange };
+};
+
 const Search = () => {
-  const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
+  const [lastPage, setLastPage] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [books, setBooks] = useState([]);
+  // const [categories, setCategories] = useState([]);
+  const [categoryId, setCategoryId] = useState(0);
+  const [typeId, setTypeId] = useState(0);
+  const [sort, setSort] = useState(0);
+  // const [startDate, setStartDate] = useState(new Date());
+  const [dateChosen, setDateChosen] = useState(false);
+  const [currentPage, setCurrentPge] = useState(1);
+
+  const input = useInputValue();
+
   const { loading, error } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const fetchData = () => dispatch(fetchPosts());
-  useEffect((prevProps, prevState) => {
-    fetchData();
-  }, []);
 
-  const { recommend = [] } = useSelector(postSelector);
+  const searchItems = (e) => {
+    if (e) e.preventDefault();
+    const body = {
+      page:
+        sort !== 0 || dateChosen > 0 || categoryId > 0 || typeId > 0
+          ? "1"
+          : currentPage,
+      ...(typeId > 0 && { type: typeId }),
+      ...(input.value.length > 0 && { keyword: input.value }),
+    };
+
+    ApiService.getResources("/search?" + new URLSearchParams(body)).then(
+      (val) => {
+        if (val) {
+          setBooks(val.data);
+          setLastPage(val.last_page);
+          if (total !== val.total) setTotal(val.total);
+        } else {
+          setBooks([]);
+        }
+      }
+    );
+  };
+
+  useEffect(
+    (prevProps, prevState) => {
+      fetchData();
+      searchItems();
+    },
+    [currentPage]
+  );
 
   if (loading || error) {
     return <Loading loading={loading} error={error} reload={fetchData} />;
-    // return <div>loading...</div>;
   }
-
-  const handleChange = (event) => {
-    const typed = event.target.value;
-
-    setInput(typed);
-  };
 
   return (
     <>
-      <main className="main">
-        <div className="container mt-5">
+      <main className="main pt-3">
+        <div className="container">
           <div className={styles.top}>
             <h2 className={styles.topTitle}>НАЙДИ СЕБЕ КНИГУ ПО ДУШЕ</h2>
 
@@ -58,18 +91,21 @@ const Search = () => {
           </div>
 
           <div className={styles.searchBox}>
-            <div className={styles.searchInputBox}>
+            <form
+              onSubmit={(e) => searchItems(e)}
+              className={styles.searchInputBox}
+            >
               <input
-                onChange={handleChange}
+                {...input}
                 type="text"
                 className={styles.searchInput}
                 placeholder="Введите название книги"
               />
               <img src={searchIcon} alt="" />
-              <button className={styles.searchBtn} type="submit">
+              <button className={styles.searchBtn}>
                 <img src={searchIcon} alt="" /> Найти
               </button>
-            </div>
+            </form>
 
             <div className={styles.searchDropDowns}>
               <ChooseDropDown
@@ -85,7 +121,7 @@ const Search = () => {
               <ChooseDropDown
                 className={styles.searchDropDown}
                 label={"Тип"}
-                items={["all", "smlkasl", "slkdjk", "lskdsl", "kslakslak"]}
+                items={["all", "Text", "Audio"]}
               />
               <ChooseDropDown
                 className={styles.searchDropDown}
@@ -96,8 +132,12 @@ const Search = () => {
           </div>
 
           <h2 className={styles.cardsTitle}>Результаты</h2>
-
-          <PaginateItems books={recommend} itemsPerPage={8} />
+          <PaginateItems
+            search={input}
+            books={books}
+            itemsPerPage={10}
+            current={currentPage}
+          />
         </div>
       </main>
 

@@ -4,7 +4,7 @@ import toRight from "../../assets/images/toRight.svg";
 import cardStyles from "../MainRegister/mainregister.module.scss";
 import Rating from "../Rating/Rating";
 
-const Cards = ({ cards }) => {
+const Cards = ({ cards, search }) => {
   return (
     <div className={styles.dropCards}>
       {cards &&

@@ -14,7 +14,7 @@ const Input = ({ value, onChange }) => {
         <label className={styles.loginLabel}>Введите свой номер телефона</label>
 
         <InputMask
-          mask="999-99-999-99-99"
+          mask="(99)-999-99-99"
           name="reactMaskInput"
           value={value}
           onChange={onChange}

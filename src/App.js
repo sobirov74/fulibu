@@ -14,16 +14,18 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <ParallaxLayer />
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/LoginPage" element={<LoginPage />} />
-          <Route path="/CommodityCard/:id" element={<CommCard />} />.
-          <Route path="/search" element={<Search />} />
-        </Routes>
+        <div className="wrap">
+          <ParallaxLayer />
+          <Header />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/LoginPage" element={<LoginPage />} />
+            <Route path="/CommodityCard/:id" element={<CommCard />} />.
+            <Route path="/search" element={<Search />} />
+          </Routes>
 
-        {/* <Footer /> */}
+          {/* <Footer /> */}
+        </div>
       </BrowserRouter>
     </Provider>
   );

@@ -8,7 +8,7 @@ input::-webkit-inner-spin-button {
   text-align: start !important;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
@@ -48,9 +48,10 @@ input::-webkit-inner-spin-button {
 .parallax {
   width: 100% !important;
   height: 100% !important;
+  flex-basis: 900px !important;
   overflow-y: visible;
   min-height: 1000px;
-  display: flex !important;
+  /* display: flex !important; */
   align-items: center;
   top: -20px;
 }
@@ -172,7 +173,6 @@ input::-webkit-inner-spin-button {
   padding: 10px;
   transition: all 0.5s ease-out;
   z-index: 100;
-  position: absolute;
   max-height: fit-content !important;
 }
 
@@ -219,7 +219,7 @@ input::-webkit-inner-spin-button {
     align-items: center !important;
   }
 
-  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
@@ -242,6 +242,15 @@ input::-webkit-inner-spin-button {
 
 .mt-5 {
   margin-top: 180px;
+}
+
+.pt-3 {
+  padding-top: 150px;
+}
+
+.wrap {
+  position: relative;
+  overflow: hidden;
 }
 
 .selected {

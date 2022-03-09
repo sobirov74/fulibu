@@ -5,7 +5,7 @@
   &Title {
     font-size: 48px;
     line-height: 59px;
-    font-family: var(--montExtraBold);
+    font-family: var(--montReg);
     color: #ffffff;
     margin-right: 57px;
   }
@@ -16,9 +16,14 @@
   }
 }
 
+.some {
+  z-index: -12 !important;
+  background-color: #ffffff;
+}
+
 .search {
   &DropDown {
-    z-index: 99;
+    z-index: 99 !important;
   }
 
   &InputBox img {
@@ -76,7 +81,7 @@
 
   &DropDowns {
     display: flex;
-    z-index: 20;
+    z-index: 10;
   }
 }
 
@@ -96,7 +101,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
-    z-index: -1;
+    z-index: -2 !important;
   }
 
   &Label {
@@ -109,7 +114,7 @@
 
   &Card {
     margin-bottom: 20px;
-    z-index: -1;
+    // z-index: ;
   }
 }
 
@@ -134,6 +139,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
   }
 
   li {
