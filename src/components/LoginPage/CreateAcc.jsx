@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
-import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
-import { Link } from "react-router-dom";
 import Input from "./Input";
+import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
 
-const LoginPage = () => {
+const CreateAcc = () => {
   return (
     <main>
       <div className={styles.loginPage}>
@@ -17,13 +17,13 @@ const LoginPage = () => {
           <div className={styles.loginContent}>
             <img src={LoginIcon1} alt="" />
 
-            <h2 className={styles.loginTitle}>ВХОД В АККАУНТ</h2>
+            <h2 className={styles.loginTitle}>СОЗДАНИЕ АККАУНТА</h2>
 
             <Input
-              inputLabel={"Введите свой номер телефона"}
-              btnLabel={"Получить код"}
-              to={"/confirm"}
-              path={"LoginPage"}
+              inputLabel={"Введите код подтверждения"}
+              inputType={"text"}
+              btnLabel={"Сохранить"}
+              to={"/userPage"}
             />
           </div>
         </div>
@@ -32,4 +32,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default CreateAcc;

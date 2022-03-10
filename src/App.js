@@ -9,6 +9,9 @@ import CommCard from "./components/CommodityCard/CommCard";
 import Search from "./components/SearchingPage/Search";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import Confirm from "./components/LoginPage/Confirm";
+import CreateAcc from "./components/LoginPage/CreateAcc";
+import WelcomingPage from "./components/LoginPage/WelcomingPage";
 
 const App = () => {
   return (
@@ -19,9 +22,12 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/LoginPage" element={<LoginPage />} />
             <Route path="/CommodityCard/:id" element={<CommCard />} />.
             <Route path="/search" element={<Search />} />
+            <Route path="/LoginPage" element={<LoginPage />} />
+            <Route path="/confirm" element={<Confirm />} />
+            <Route path="/createAcc" element={<CreateAcc />} />
+            <Route path="/userPage" element={<WelcomingPage />} />
           </Routes>
 
           {/* <Footer /> */}

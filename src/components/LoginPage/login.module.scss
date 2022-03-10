@@ -20,6 +20,29 @@
     align-items: center;
   }
 
+  &Content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+      display: block;
+      max-width: 350px;
+      width: 100%;
+    }
+  }
+
+  &UserLabel {
+    width: 100%;
+    background: rgba(26, 26, 26, 0.6);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 14px 0 14px 20px;
+  }
+
   &BackBtn {
     position: absolute;
     right: 0;
@@ -68,7 +91,6 @@
   }
 
   &Field {
-    width: 100%;
     background: rgba(26, 26, 26, 0.6);
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
@@ -76,6 +98,10 @@
     outline: none;
     color: #fff;
     padding: 14px 0 14px 20px;
+    font-family: var(--montReg);
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
   }
 
   &Label {
@@ -83,5 +109,61 @@
     line-height: 14px;
     color: #999999;
     font-family: var(--montReg);
+    margin-bottom: 5px;
   }
+
+  &More {
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    font-family: var(--montExtraBold);
+    color: #fe8d00;
+    margin: 5px 0;
+  }
+
+  &Welcome {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    font-family: var(--montReg);
+    color: #ffffff;
+    margin-top: 21px;
+    margin-bottom: 20px;
+
+    span {
+      color: #fe8d00;
+    }
+
+    &Link {
+      font-size: 10px;
+      line-height: 14px;
+      font-family: var(--montReg);
+      color: #999999;
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    &Descr {
+      font-size: 10px;
+      line-height: 14px;
+      font-family: var(--montExtraBold);
+      color: #999999;
+
+      span {
+        text-transform: uppercase;
+        color: #33d160;
+      }
+    }
+  }
+}
+
+.resendPassword {
+  font-size: 10px;
+  line-height: 14px;
+  font-family: var(--montReg);
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
 }

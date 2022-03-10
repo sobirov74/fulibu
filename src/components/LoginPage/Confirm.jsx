@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
-import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
-import { Link } from "react-router-dom";
 import Input from "./Input";
+import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
 
-const LoginPage = () => {
+const Confirm = () => {
   return (
     <main>
       <div className={styles.loginPage}>
@@ -20,11 +20,16 @@ const LoginPage = () => {
             <h2 className={styles.loginTitle}>ВХОД В АККАУНТ</h2>
 
             <Input
-              inputLabel={"Введите свой номер телефона"}
-              btnLabel={"Получить код"}
-              to={"/confirm"}
-              path={"LoginPage"}
+              inputLabel={"Введите код подтверждения"}
+              inputType={"number"}
+              btnLabel={"Подтвердить"}
+              to={"/createAcc"}
+              path={"confirm"}
             />
+
+            <Link to="/confirm" className={styles.resendPassword}>
+              Не получил код!
+            </Link>
           </div>
         </div>
       </div>
@@ -32,4 +37,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Confirm;
