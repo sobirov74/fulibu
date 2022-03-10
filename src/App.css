@@ -145,7 +145,6 @@ input::-webkit-inner-spin-button {
 .search-dropDown {
   width: 252px;
 }
-
 .search-dropDown .Dropdown-placeholder {
   color: #ffffff !important;
   font-family: var(--montReg);
@@ -156,14 +155,14 @@ input::-webkit-inner-spin-button {
 .search-dropDown .Dropdown-control {
   border-radius: 20px;
   display: block;
-  background: rgba(26, 26, 26, 0.6);
+  background: #3a3f4e !important;
   backdrop-filter: blur(40px);
   border: none;
   position: relative !important;
 }
 
 .search-dropDown .Dropdown-menu {
-  background: rgba(26, 26, 26, 0.6);
+  background: #3a3f4e !important;
   display: flex;
   flex-direction: column;
   top: 45px;
