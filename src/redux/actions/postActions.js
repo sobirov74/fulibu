@@ -12,6 +12,19 @@ export const fetchPosts = () => (dispatch) => {
     });
 };
 
+export const getMobileNumber = (dispatch) => {
+  dispatch(mobileRequest);
+}
+
+
+const mobileRequest = (payload) => {
+  return {
+    type: POST_SUCCESS,
+    payload,
+  };
+}
+
+
 const postRequest = () => {
   return {
     type: POST_LOADING,

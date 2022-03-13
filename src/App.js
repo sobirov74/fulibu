@@ -13,18 +13,19 @@ import Confirm from "./components/LoginPage/Confirm";
 import CreateAcc from "./components/LoginPage/CreateAcc";
 import WelcomingPage from "./components/LoginPage/WelcomingPage";
 import { PersistGate } from "redux-persist/integration/react";
+import Loading from './components/Loading/Loading';
 
 const App = () => {
-  const { token } = useSelector((state) => state.posts);
+  // const { token } = useSelector((state) => state.posts);
 
   // useEffect(() => {
   //   ()
   // })
 
-  console.log(token);
+  // console.log(token);
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<Loading />} persistor={persistor}>
         <BrowserRouter>
           <div className="wrap">
             <ParallaxLayer />
@@ -39,11 +40,10 @@ const App = () => {
               <Route path="/userPage" element={<WelcomingPage />} />
             </Routes>
 
-            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </PersistGate>
-    </Provider>
+    </Provider >
   );
 };
 
