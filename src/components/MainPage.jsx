@@ -12,6 +12,7 @@ export const MainPage = () => {
   const { loading, error } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const fetchData = () => dispatch(fetchPosts());
+
   useEffect(() => {
     fetchData();
   }, []);

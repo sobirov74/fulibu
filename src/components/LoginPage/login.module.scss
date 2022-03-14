@@ -87,6 +87,7 @@
     outline: none;
     border: none;
     cursor: pointer;
+    width: 100%;
     margin-top: 20px;
   }
 
@@ -156,6 +157,11 @@
       }
     }
   }
+}
+
+.conInput {
+  text-align: center;
+  padding-left: 0;
 }
 
 .resendPassword {

@@ -6,6 +6,28 @@ class ApiService {
     "Content-Type": "application/json",
   };
 
+  static postData = async (url, token, form) => {
+    let headers = this._headers;
+    if (token) {
+      headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      };
+    }
+    return fetch(this._apiBase + url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(form),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((value) => {
+        return value;
+      });
+  };
+
   static getResources = async (url, token = null) => {
     let headers = this._headers;
 
@@ -17,7 +39,8 @@ class ApiService {
       };
     }
 
-    const res = await fetch(ApiService._apiBase + url, { headers });
+    const res = await fetch(this._apiBase + url, { headers });
+
     return await res.json();
   };
 }

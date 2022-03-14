@@ -4,50 +4,52 @@ import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
 import { Link } from "react-router-dom";
 
 import InputMask from "react-input-mask";
-import React, { useContext, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import Loading from "../Loading/Loading";
+import { getPhone } from "../../redux/actions/getActions";
+
 const LoginPage = ({ history }) => {
   const dispatch = useDispatch();
-  const selector = useSelector((state) => state.payload);
-  const [telNum, setTelNum] = useState({});
-
-  const handleContact = (event) => {
-    setTelNum({ ...telNum, number: event.target.value });
-  };
+  const [telNum, setTelNum] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const handleSubmit = (e) => {
+    dispatch(getPhone({ phone: telNum }));
     e.preventDefault();
-    console.log(telNum);
-    window.localStorage.setItem("telNum", JSON.stringify(telNum));
+    setLoading(false);
   };
+
+  if (loading) return <Loading />;
 
   return (
     <main>
       <div className={styles.loginPage}>
         <div className={styles.loginContainer}>
-          <Link to='/' className={styles.loginBackBtn}>
-            <img src={close} alt='' />
+          <Link to="/" className={styles.loginBackBtn}>
+            <img src={close} alt="" />
           </Link>
 
           <div className={styles.loginContent}>
-            <img src={LoginIcon1} alt='' />
+            <img src={LoginIcon1} alt="" />
 
             <h2 className={styles.loginTitle}>ВХОД В АККАУНТ</h2>
 
             <form
               onSubmit={handleSubmit}
-              style={{ display: "flex", flexDirection: "column" }}>
+              style={{ display: "flex", flexDirection: "column" }}
+            >
               <label className={styles.loginLabel}>
                 Введите свой номер телефона
               </label>
               <InputMask
-                mask='+\9\9\8 (99)-999-99-99'
-                name='reactMaskInput'
-                onChange={handleContact}
+                mask="+\9\9\8 (99)-999-99-99"
+                name="reactMaskInput"
+                value={telNum}
+                onChange={(e) => setTelNum(e.target.value)}
                 className={styles.loginField}
               />
-              <button type='submit' className={styles.loginBtn}>
+              <button type="submit" className={styles.loginBtn}>
                 Получить код
               </button>
             </form>

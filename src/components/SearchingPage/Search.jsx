@@ -14,7 +14,7 @@ import ApiService from "../../ApiService";
 const years = ["all"];
 const currYear = new Date().getFullYear();
 
-for (let i = 2017; i <= currYear; i++) {
+for (let i = 2016; i <= currYear; i++) {
   years.push(i);
 }
 
@@ -42,7 +42,7 @@ const Search = () => {
 
   const { loading, error } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
-  const fetchData = () => dispatch(fetchPosts());
+  const fetchData = () => fetchPosts();
 
   const searchItems = (e) => {
     if (e) e.preventDefault();

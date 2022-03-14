@@ -3,40 +3,26 @@ import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
 import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
-import { Context } from "../MainContext";
 import Loading from "../Loading/Loading";
+import ApiService from "../../ApiService";
+import { useDispatch } from "react-redux";
+import { confirmation } from "../../redux/actions/getActions";
 
 const Confirm = ({ history }) => {
-  const { apiService, phone, saveToken, saveRegister, relatedId } =
-    useContext(Context);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const code = useRef(null);
 
   const confirm = (e) => {
-    setLoading(true);
+    // setLoading(true);
     const body = {
-      phone,
       verify_code: code.current.value,
-      ...(relatedId && { linked: relatedId }),
     };
 
-    apiService.postData("/auth", null, body).then((value) => {
-      setLoading(false);
-      if (value.statusCode === 200) {
-        const checker = value.data.registered;
-        saveToken(value.data.token);
-        saveRegister(checker);
-
-        if (!checker) {
-          history.push("/confirm-policy");
-        } else {
-          history.push("/user");
-        }
-      }
-    });
+    dispatch(confirmation(code));
   };
 
-  if (loading) return <Loading />;
+  // if (loading) return <Loading />;
 
   return (
     <main>
@@ -56,7 +42,12 @@ const Confirm = ({ history }) => {
                 Введите код подтверждения
               </label>
 
-              <input type="text" className={styles.loginField} />
+              <input
+                ref={(input) => (code.current = input)}
+                type="text"
+                className={`${styles.loginField} ${styles.conInput}`}
+                placeholder="123 123"
+              />
 
               <button type="submit" className={styles.loginBtn}>
                 Подтвердить

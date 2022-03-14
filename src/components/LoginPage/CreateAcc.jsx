@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
-import Input from "./Input";
 import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
 
 const CreateAcc = () => {
@@ -19,12 +18,12 @@ const CreateAcc = () => {
 
             <h2 className={styles.loginTitle}>СОЗДАНИЕ АККАУНТА</h2>
 
-            <Input
+            {/* <Input
               inputLabel={"Введите код подтверждения"}
               inputType={"text"}
               btnLabel={"Сохранить"}
               to={"/userPage"}
-            />
+            /> */}
           </div>
         </div>
       </div>
