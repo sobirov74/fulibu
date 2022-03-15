@@ -10,13 +10,13 @@ import { loginReducer } from "./loginReducer";
 
 const rootReducer = combineReducers({
   posts: postsReducer,
-  loginReducer: loginReducer,
+  login: loginReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["loginReducer"],
+  whitelist: ["login"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

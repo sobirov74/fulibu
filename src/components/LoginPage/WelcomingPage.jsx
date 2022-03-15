@@ -3,21 +3,27 @@ import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
 import LoginIcon1 from "../../assets/images/userPage.svg";
+import { useSelector } from "react-redux";
+import { loginSelector } from "../../redux/loginReducer";
 
 const WelcomingPage = () => {
+  const { name = "abdumalik" } = useSelector(loginSelector);
+
   return (
     <main>
       <div className={styles.loginPage}>
         <div className={styles.loginContainer}>
-          <Link to="/" className={styles.loginBackBtn}>
-            <img src={close} alt="" />
-          </Link>
+          <div className={styles.loginBtnsBox}>
+            <Link to="/" className={styles.loginBackBtn}>
+              <img src={close} alt="" />
+            </Link>
+          </div>
 
           <div className={styles.loginContent}>
             <img src={LoginIcon1} alt="" />
 
             <h2 className={styles.loginWelcome}>
-              Добро пожаловать <span>Абдумалик</span>{" "}
+              Добро пожаловать <span>{name}</span>
             </h2>
 
             <p className={styles.loginWelcomeDescr}>

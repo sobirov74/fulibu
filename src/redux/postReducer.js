@@ -9,6 +9,7 @@ const initialState = {
   recommend: [],
   loading: false,
   newest: [],
+  collection: [],
   error: null,
 };
 
@@ -20,7 +21,7 @@ export const postsReducer = (state = initialState, action) => {
         loading: true,
       };
     case POST_SUCCESS: {
-      const { newest, recommend, hot: xits } = action.payload;
+      const { newest, recommend, collection, hot: xits } = action.payload;
       console.log(action.payload);
       return {
         ...state,
@@ -28,8 +29,8 @@ export const postsReducer = (state = initialState, action) => {
         newest,
         recommend,
         xits,
+        collection,
         error: null,
-        // token: action.payload.
       };
     }
     case POST_ERROR: {
@@ -56,6 +57,5 @@ export const FetchReload = () => {
 
   if (loading || error) {
     return <Loading loading={loading} error={error} reload={fetchData} />;
-    // return <div>loading...</div>;
   }
 };

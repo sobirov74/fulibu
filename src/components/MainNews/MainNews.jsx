@@ -9,6 +9,7 @@ import { postSelector } from "../../redux/postReducer";
 const MainNews = () => {
   const { xits = [] } = useSelector(postSelector);
   const { newest = [] } = useSelector(postSelector);
+  // const { collection = [] } = useSelector(postSelector);
   return (
     <>
       <div className={styles.main__xits}>
@@ -17,6 +18,12 @@ const MainNews = () => {
         </div>
 
         <MainXitsCard data={xits} />
+        {/* 
+        <div className="container">
+          <h3 className={styles.main__xits_title}>Сборники</h3>
+        </div>
+
+        <MainXitsCard data={xits} /> */}
       </div>
 
       <div className={styles.mainNews}>

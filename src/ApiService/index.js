@@ -28,6 +28,24 @@ class ApiService {
       });
   };
 
+  updateForm = async (url, token, form) => {
+    let headers = this._headers;
+    if (token) {
+      headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      };
+    }
+    return fetch(this._apiBase + url, {
+      method: "PUT",
+      headers,
+      body: JSON.stringify(form),
+    }).then((res) => {
+      return res.json();
+    });
+  };
+
   static getResources = async (url, token = null) => {
     let headers = this._headers;
 

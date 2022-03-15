@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
 import ApiService from "../../ApiService";
-import { POST_ERROR, POST_LOADING, POST_SUCCESS } from "../types/postTypes";
+import { loginSelector } from "../loginReducer";
+import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from "../types/postTypes";
 
 export const getPhone =
   ({ phone }) =>
   (dispatch) => {
-    dispatch(postRequest());
+    dispatch(loginRequest());
     const body = {
       phone,
     };
@@ -12,49 +14,71 @@ export const getPhone =
       .then((res) => {
         if (res.statusCode === 200) {
           window.location.replace("/confirm");
-          dispatch(postSuccess(phone));
+          dispatch(loginSuccess({ phone }));
         }
       })
       .catch((e) => {
-        dispatch(postError(e?.message));
+        dispatch(loginError(e?.message));
       });
   };
 
 export const confirmation =
-  ({ phone, code }) =>
+  ({ verify_code, phone }) =>
   (dispatch) => {
     const body = {
+      verify_code,
       phone,
-      verify_code: code.current.value,
     };
 
     ApiService.postData("/auth", null, body)
       .then((value) => {
         if (value.statusCode === 200) {
-          dispatch(postSuccess(code));
+          dispatch(loginSuccess(value));
+          // window.location.replace("/createAcc");
         }
       })
       .catch((e) => {
-        dispatch(postError(e?.message));
+        dispatch(loginError(e?.message));
       });
   };
 
-const postRequest = () => {
+export const accaunt =
+  ({ name, token }) =>
+  (dispatch) => {
+    const body = {
+      name,
+    };
+
+    console.log(name, token);
+
+    ApiService.updateForm("/account", token, body)
+      .then((val) => {
+        if (val.statusCode === 200) {
+          dispatch(loginSuccess({ name, token })); // success da faqat vajue boladi sould be stored
+          window.location.replace("/userPage");
+        }
+      })
+      .catch((e) => {
+        dispatch(loginError(e?.message));
+      });
+  };
+
+const loginRequest = () => {
   return {
-    type: POST_LOADING,
+    type: LOGIN_LOADING,
   };
 };
 
-const postSuccess = (payload) => {
+const loginSuccess = (payload) => {
   return {
-    type: POST_SUCCESS,
+    type: LOGIN_SUCCESS,
     payload,
   };
 };
 
-const postError = (payload = "") => {
+const loginError = (payload = "") => {
   return {
-    type: POST_ERROR,
+    type: LOGIN_ERROR,
     payload,
   };
 };

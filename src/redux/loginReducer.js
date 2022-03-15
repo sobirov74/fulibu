@@ -1,32 +1,34 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Loading from "../components/Loading/Loading";
-import { confirmation, getPhone } from "./actions/getActions";
-import { POST_ERROR, POST_LOADING, POST_SUCCESS } from "./types/postTypes";
+import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from "./types/postTypes";
 
 const initialState = {
   loading: false,
   error: null,
+  phone: "",
+  code: "",
+  name: "",
+  token: null,
 };
 
 export const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case POST_LOADING:
+    case LOGIN_LOADING:
       return {
         ...initialState,
         loading: true,
       };
-    case POST_SUCCESS: {
-      const { token } = action.payload;
-      console.log(action.payload);
+    case LOGIN_SUCCESS: {
+      const { code, phone, name, token } = action.payload;
       return {
         ...state,
         loading: false,
+        code,
+        phone,
+        name,
+        token,
         error: null,
-        token: token.action.payload, // look it
       };
     }
-    case POST_ERROR: {
+    case LOGIN_ERROR: {
       return {
         ...initialState,
         loading: false,
@@ -38,18 +40,4 @@ export const loginReducer = (state = initialState, action) => {
   }
 };
 
-export const GetReload = () => {
-  const { loading, error } = useSelector((state) => state.posts);
-  const dispatch = useDispatch();
-  const getData = () => dispatch(getPhone());
-  const getCode = () => dispatch(confirmation());
-  useEffect(() => {
-    getData();
-    getCode();
-  }, []);
-
-  if (loading || error) {
-    return <Loading loading={loading} error={error} phone={getData} />;
-    // return <div>loading...</div>;
-  }
-};
+export const loginSelector = (state) => state.login;
