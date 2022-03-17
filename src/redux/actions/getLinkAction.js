@@ -8,7 +8,7 @@ export const getLinkAction = () => (dispatch) => {
     .then((value) => {
       if (value.statusCode === 200) {
         dispatch(linkSuccess(value));
-        window.location.replace("/createAcc");
+        
       }
     })
     .catch((e) => {
