@@ -3,13 +3,11 @@ import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from "./types/postTypes";
 const initialState = {
   loading: false,
   error: null,
-  phone: "",
-  code: "",
   name: "",
   token: null,
 };
 
-export const loginReducer = (state = initialState, action) => {
+export const accountReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_LOADING:
       return {
@@ -17,12 +15,11 @@ export const loginReducer = (state = initialState, action) => {
         loading: true,
       };
     case LOGIN_SUCCESS: {
-      const { code, phone, name, token } = action.payload;
+      const { name, token } = action.payload;
+      console.log(token);
       return {
         ...state,
         loading: false,
-        code,
-        phone,
         name,
         token,
         error: null,
@@ -40,4 +37,4 @@ export const loginReducer = (state = initialState, action) => {
   }
 };
 
-export const loginSelector = (state) => state.login;
+export const accountSelector = (state) => state.account;

@@ -4,20 +4,16 @@ import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
 import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
 import { useDispatch } from "react-redux";
-import { confirmation } from "../../redux/actions/getActions";
 import { useSelector } from "react-redux";
-import { loginSelector } from "../../redux/loginReducer";
 import back from "../../assets/images/arrow-left.svg";
+import { confirmation } from "../../redux/actions/confirmAction";
+import { phoneSelector } from "../../redux/phoneReducer";
 
 const Confirm = ({ history }) => {
   const dispatch = useDispatch();
   const [verCode, setVerCode] = useState("");
   const code = useRef(null);
-  const { phone = "" } = useSelector(loginSelector);
-
-  // console.log(phone, "po");
-
-  // const phone = "+998 (90)-952-00-09";
+  const { phone = "" } = useSelector(phoneSelector);
 
   const confirm = (e) => {
     e.preventDefault();

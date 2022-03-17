@@ -28,7 +28,7 @@ class ApiService {
       });
   };
 
-  updateForm = async (url, token, form) => {
+  static updateForm = async (url, token, form) => {
     let headers = this._headers;
     if (token) {
       headers = {

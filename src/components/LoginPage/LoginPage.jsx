@@ -7,8 +7,8 @@ import InputMask from "react-input-mask";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Loading from "../Loading/Loading";
-import { getPhone } from "../../redux/actions/getActions";
 import back from "../../assets/images/arrow-left.svg";
+import { getPhone } from "../../redux/actions/getPhone";
 
 const LoginPage = ({ history }) => {
   const dispatch = useDispatch();

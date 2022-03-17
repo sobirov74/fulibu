@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
 import LoginIcon1 from "../../assets/images/userPage.svg";
 import { useSelector } from "react-redux";
-import { loginSelector } from "../../redux/loginReducer";
+import { accountSelector } from "../../redux/accountReducer";
 
 const WelcomingPage = () => {
-  const { name = "abdumalik" } = useSelector(loginSelector);
+  const { name } = useSelector(accountSelector);
+  const [nameCur, setName] = useState("");
+  const [copy, setCopy] = useState("Скопировать");
+  const button = useRef();
+  const textArea = useRef();
+  useEffect(() => {
+    setName(name);
+  }, [name]);
+
+  const copyToClipboard = () => {
+    const text = textArea.current.innerText;
+    navigator.clipboard.writeText(text);
+    button.current.style.background = "#FE8D00";
+    setCopy("copied");
+  };
+
+  console.log(name);
 
   return (
     <main>
@@ -23,7 +39,7 @@ const WelcomingPage = () => {
             <img src={LoginIcon1} alt="" />
 
             <h2 className={styles.loginWelcome}>
-              Добро пожаловать <span>{name}</span>
+              Добро пожаловать <span>{nameCur}</span>
             </h2>
 
             <p className={styles.loginWelcomeDescr}>
@@ -35,11 +51,20 @@ const WelcomingPage = () => {
               Подробнее
             </Link>
 
-            <label className={styles.loginField}>
+            <label
+              ref={(link) => (textArea.current = link)}
+              className={styles.loginField}
+            >
               https://www.fulibu.uz/d/1wsOqTmqNpBedUWmKsdGLlswpZ6pRiFYt/view?usp=sharingалик
             </label>
 
-            <button className={styles.loginBtn}>Скопировать</button>
+            <button
+              ref={button}
+              onClick={copyToClipboard}
+              className={styles.loginBtn}
+            >
+              {copy}
+            </button>
 
             <Link to="/" className={styles.loginWelcomeLink}>
               Не сейчас

@@ -4,17 +4,16 @@ import styles from "./login.module.scss";
 import close from "../../assets/images/close.svg";
 import back from "../../assets/images/arrow-left.svg";
 import LoginIcon1 from "../../assets/images/LoginIcon1.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { accaunt } from "../../redux/actions/getActions";
-import { loginSelector } from "../../redux/loginReducer";
+import { useDispatch } from "react-redux";
+import { accaunt } from "../../redux/actions/getAccount";
+import { useSelector } from "react-redux";
+import { confirmSelector } from "../../redux/confirmReducer";
 
 const CreateAcc = () => {
   const [name, setName] = useState("");
-  const { token } = useSelector(loginSelector);
   const nameRef = useRef(null);
   const dispatch = useDispatch();
-
-  console.log(token);
+  const { token } = useSelector(confirmSelector);
 
   const handleSubmit = (e) => {
     e.preventDefault();

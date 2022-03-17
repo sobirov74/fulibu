@@ -6,17 +6,23 @@ import { applyMiddleware } from "redux";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
-import { loginReducer } from "./loginReducer";
+import { accountReducer } from "./accountReducer";
+import { confirmReducer } from "./confirmReducer";
+import { phoneReducer } from "./phoneReducer";
+import { linkReducer } from "./linkReducer";
 
 const rootReducer = combineReducers({
   posts: postsReducer,
-  login: loginReducer,
+  account: accountReducer,
+  token: confirmReducer,
+  phone: phoneReducer,
+  link: linkReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["login"],
+  whitelist: ["phone", "token"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
