@@ -3,8 +3,8 @@ import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS } from "./types/postTypes";
 const initialState = {
   loading: false,
   error: null,
-  name: "",
-  token: null,
+  name: "", //swkslkjhskjwhshwsjwjsjhkj
+  token: null, //skwjsjwshwjkhwkjshwhsuwois
 };
 
 export const accountReducer = (state = initialState, action) => {
